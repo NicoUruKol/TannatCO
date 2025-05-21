@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Home from './layouts/Home'
-import { BrowserRouter as Router, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Routes, Route, Navigate} from 'react-router-dom';
 import Nav from './Component/Nav';
 import ProductosContainer from './Component/ProductosConteiner';
 import Carrito from './Component/Carrito';
@@ -58,7 +58,7 @@ function manejarUser(){
   }
 
   return (
-    <BrowserRouter basename="/TannatCO/">
+
       <div>
         <Nav productosCarrito={productosCarrito}/>
         <Routes>
@@ -78,7 +78,7 @@ function manejarUser(){
           <Route path="/loginadmin" element={<LoginAdmin setLogueadoAdmin={manejarAdmin} admin={adminLogueado} />}/>
         </Routes>
       </div>
-    </BrowserRouter>
+
   )
 }
 
