@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Home from './layouts/Home'
-import { BrowserRouter as Routes, Route, Navigate} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Nav from './Component/Nav';
 import ProductosContainer from './Component/ProductosConteiner';
 import Carrito from './Component/Carrito';
