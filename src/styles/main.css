@@ -1,0 +1,164 @@
+main{
+    padding: 20px;
+    justify-self: center; 
+}
+
+main h2 {
+    width: 100%;
+    background-color: var(--color-separador);
+    color: var(--color-fondo);
+    text-align: center;
+    height: 4rem;
+    align-content: center;
+    font-size: 2rem;
+    font-family: "Libre Caslon Text";
+    }
+
+/* INICIO CSS CORTE*/
+.corte-info-card{
+    padding: 0;
+    margin: 1rem auto;
+    color: var(--color-separador);
+    text-transform: uppercase;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    align-items: center;
+}
+
+.corte-perse-1{
+    display: flex;
+    width: 30rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.2rem;
+    height: 7rem;
+}
+
+.corte-perse-1 img{
+    width: 2rem;
+}
+
+.corte-perse{
+    display: flex;
+    width: 30rem;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid;
+    padding: 0.2rem;
+    height: 7rem;
+}
+
+.corte-perse img{
+    width: 2rem;
+}
+
+/* FIN CSS CORTE*/
+/* INICIO CSS BANNER*/
+
+.banner-slide{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.banner-slide ul{
+    display: flex;
+    padding: 0;
+    width: 200%;
+    animation: slide 8s infinite alternate ease-in-out;
+}
+
+.banner-slide li{
+    width: 100%;
+}
+
+.banner-slide a{
+    padding: 0;
+}
+
+.banner-slide img{
+    width: 100%;
+}
+
+@keyframes slide {
+    0% {margin-left: 0%;}
+    45% {margin-left: 0%;}
+
+    50% {margin-left: -100%;}
+    100% {margin-left: -100%;}    
+}
+
+/* FIN CSS BANNER*/
+/* INICIO CSS BODEGAMES*/
+
+.destacados-lista-container {
+    width: auto;
+    max-width: 110rem;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    justify-content: center;
+    border-radius: 0.8rem;
+}
+
+.destacados-lista img{
+    width: 15rem;
+    height: 26rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 2px rgba(87,27,45, 0.2);
+    margin: 2rem;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.imagen-hover:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.cerrar:hover {
+    color: #fff;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    cursor: default;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+    
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--color-fondo);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-sin-estilo {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
