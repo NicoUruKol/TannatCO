@@ -1,0 +1,29 @@
+
+.banner-principal {
+    background-image: url('../assets/01-Uruguay-Tannat.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    max-width: 100%;
+    padding: 1.5rem;
+    font-family: "Libre Caslon Text";
+    font-size: 4vw;
+    text-align: center;
+    align-content: center;
+    color: var(--color-header);
+    margin: 0 auto;
+    text-shadow: 0 2px 2px rgba(87,27,45, 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+.banner-principal h1 {
+    font-size: 5rem;
+    margin: -1rem 0;
+    }
+    
+.banner-principal p {
+    font-size: 1.5rem;
+    margin: 0.2rem 0;
+    }
