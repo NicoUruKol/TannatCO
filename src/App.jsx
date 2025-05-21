@@ -58,7 +58,7 @@ function manejarUser(){
   }
 
   return (
-    <Router>
+    <BrowserRouter basename="/TannatCO">
       <div>
         <Nav productosCarrito={productosCarrito}/>
         <Routes>
@@ -78,7 +78,7 @@ function manejarUser(){
           <Route path="/loginadmin" element={<LoginAdmin setLogueadoAdmin={manejarAdmin} admin={adminLogueado} />}/>
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 
