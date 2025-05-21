@@ -58,7 +58,7 @@ function manejarUser(){
   }
 
   return (
-    <BrowserRouter basename="/TannatCO">
+    <BrowserRouter basename="/TannatCO/">
       <div>
         <Nav productosCarrito={productosCarrito}/>
         <Routes>
