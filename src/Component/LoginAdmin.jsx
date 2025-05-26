@@ -7,7 +7,7 @@ export default function LoginAdmin({ setLogueadoAdmin, admin }) {
 
     return (
         <div>
-            <button onClick={setLogueadoAdmin}>
+            <button className="login-container" onClick={setLogueadoAdmin}>
                 Iniciar sesión Admin
             </button>
         </div>

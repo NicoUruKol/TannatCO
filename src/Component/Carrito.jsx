@@ -2,15 +2,13 @@ import "../styles/carrito.css"
 import { formatearPrecio } from '../Component/FomatoPrecio';
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CarritoContext } from "../contexts/CarritoContexts";
 
-export default function Carrito({ productos, vaciarCarrito, eliminarProducto, setLogueadoUser}) {
-    const subtotal = productos.reduce((acc, prod) => acc + (prod.price * prod.cantidad), 0);
-    const irAPagos = () => {
-        if (user) {
-            
-        }
-    }
-
+export default function Carrito({setLogueadoUser}) {
+    const {productosCarrito, eliminarProducto, vaciarCarrito} = useContext(CarritoContext);
+    
+    const subtotal = productosCarrito.reduce((acc, prod) => acc + (prod.price * prod.cantidad), 0);
 
     return (
         <div>
@@ -25,8 +23,8 @@ export default function Carrito({ productos, vaciarCarrito, eliminarProducto, se
                         <span>Eliminar</span>
                     </div>
 
-                    {productos.length > 0 ? productos.map((producto) => (
-                        <div key={producto.id} className="carrito-producto">
+                    {productosCarrito.length > 0 ? productosCarrito.map((producto) => (
+                        <div key={productosCarrito.id} className="carrito-producto">
                             <img className="carrito-imagen" src={producto.avatar} alt={producto.name} />
                             <h2 className="carrito-nombre">{producto.name}</h2>
                             <span style={{ color: "black" }}>x {producto.cantidad}</span>

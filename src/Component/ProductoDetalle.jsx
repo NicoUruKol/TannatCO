@@ -5,9 +5,12 @@ import { dispararSweetConfirmar } from "../assets/sweetAlert";
 import { formatearPrecio } from "./FomatoPrecio";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CarritoContext } from "../contexts/CarritoContexts";
 
 
-export default function ProductoDetalle({funcionCarrito}){
+export default function ProductoDetalle({}){
+    const {agregarAlCarrito} = useContext(CarritoContext)
     const { id } = useParams();
     const [producto, setProducto] = useState(null);
     const [cantidad, setCantidad] = useState(1);
@@ -34,10 +37,10 @@ export default function ProductoDetalle({funcionCarrito}){
             });
     }, [id]);
 
-    function agregarAlCarrito() {
+    function funcionCarrito() {
         if (cantidad < 1) return;
         dispararSweetConfirmar("Agregado!!!", "El producto ha sido agregado con exito!!!","success")
-        funcionCarrito({...producto, cantidad});
+        agregarAlCarrito({...producto, cantidad});
         }
 
     function sumarContador() {
@@ -67,7 +70,7 @@ export default function ProductoDetalle({funcionCarrito}){
                         <span style={{margin: "0 10px"}}>{cantidad}</span>
                         <button onClick={sumarContador} className="agregar-boton-signo">+</button>
                     </div>
-                    <button className="agregar-boton" onClick={agregarAlCarrito}>Agregar al carrito</button>
+                    <button className="agregar-boton" onClick={funcionCarrito}>Agregar al carrito</button>
                     <div>
                         <Link to="/productos">
                             <button className="mover-boton-1">Volver a productos</button>

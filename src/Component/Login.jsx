@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "../styles/login.css"
 
 export default function Login({ setLogueadoUser, user }) {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function Login({ setLogueadoUser, user }) {
 
     return (
         <div>
-            <button onClick={manejarClick}>
+            <button className="login-container" onClick={manejarClick}>
                 {user ? "Cerrar sesión" : "Iniciar sesión"}
             </button>
         </div>

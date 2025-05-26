@@ -1,9 +1,12 @@
 import { formatearPrecio } from "./FomatoPrecio";
 import '../styles/pagos.css'
 import { dispararSweetConfirmar } from "../assets/sweetAlert";
+import { useContext } from "react";
+import { CarritoContext } from "../contexts/CarritoContexts";
 
-export default function Pagos({ productos}) {
-    const subtotal = productos.reduce((acc, prod) => acc + (prod.price * prod.cantidad), 0);
+export default function Pagos({}) {
+    const {productosCarrito} = useContext(CarritoContext)
+    const subtotal = productosCarrito.reduce((acc, prod) => acc + (prod.price * prod.cantidad), 0);
 
     return (
         <div className="pagos-resumen">

@@ -3,8 +3,12 @@ import "../styles/nav.css";
 import { FaTools, FaUser } from "react-icons/fa";
 import { ShoppingCart } from "lucide-react";
 import Logo from '../assets/logo_photoshop_LARGO.png'
+import { useContext } from "react";
+import { CarritoContext } from "../contexts/CarritoContexts";
 
-function Nav({ productosCarrito }) {
+function Nav({}) {
+    const {productosCarrito} = useContext(CarritoContext)
+
     return (
         <>
             <div className="nav-barra-superior">

@@ -1,0 +1,17 @@
+.login-container {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-footerPerse);
+    color: var(--color-separador);
+    border: solid 1px var(--color-separador);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-container:hover {
+    background-color: var(--color-header);
+    color: var(--color-separador);
+}
