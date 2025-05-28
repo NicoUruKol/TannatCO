@@ -5,17 +5,29 @@ import { ShoppingCart } from "lucide-react";
 import Logo from '../assets/logo_photoshop_LARGO.png'
 import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
+import { useAuthContext } from "../contexts/LoginContext";
 
-function Nav({}) {
-    const {productosCarrito} = useContext(CarritoContext)
+function Nav() {
+    const { productosCarrito } = useContext(CarritoContext);
+    const { currentUser, logout } = useAuthContext();
 
     return (
         <>
             <div className="nav-barra-superior">
                 <ul>
-                    <li><Link className="nav-superior-link" to="/login"><FaUser /> iniciar sesion</Link></li>
-                    <li><Link className="nav-superior-link" to="/crearCuenta">crear cuenta</Link></li>
-                    <li><Link className="nav-superior-link" to="/admin"><FaTools /> admin</Link></li>
+                    {!currentUser ? (
+                        <>
+                            <li><Link className="nav-superior-link" to="/login"><FaUser /> Iniciar Sesión</Link></li>
+                            <li><Link className="nav-superior-link" to="/registro">Crear Cuenta</Link></li>
+                        </>
+                    ) : (
+                        <>
+                            <li className="nav-superior-link">Hola, <span>{currentUser.email.split('@')[0]}</span>
+</li>
+                            <li><button className="nav-superior-link" style= {{color: "var(--color-separador)"}}onClick={logout}>Cerrar Sesión</button></li>
+                        </>
+                    )}
+                    <li><Link className="nav-superior-link" to="/admin"><FaTools /> Admin</Link></li>
                 </ul>
             </div>
 
@@ -35,8 +47,10 @@ function Nav({}) {
                     <Link className="nav-link carrito-link" to="/carrito">
                         <ShoppingCart size={52} />
                         {productosCarrito.length > 0 && (
-                        <span className="carrito-contador">
-                        {productosCarrito.length}</span>)}
+                            <span className="carrito-contador">
+                                {productosCarrito.length}
+                            </span>
+                        )}
                     </Link>
                 </div>
             </nav>
