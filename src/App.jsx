@@ -14,15 +14,12 @@
   import LoginAdmin from './Component/LoginAdmin';
   import Pagos from './Component/Pagos';
   import RegistroUser from './Component/Registro';
+import { useAdminContext } from './contexts/AdminContext';
   
   function App() {
     const { currentUser } = useAuthContext();
-    const [adminLogueado, setAdminLogueado] = useState(false)
+    const {admin}= useAdminContext();
   
-
-function manejarAdmin() {
-    setAdminLogueado(!adminLogueado)
-  }
 
     return (
 
@@ -38,8 +35,7 @@ function manejarAdmin() {
             <Route path="/pagos" element={currentUser ? <Pagos /> : <Navigate to="/login" replace />} />
             <Route path='/contacto' element={<Contacto/>}/>
             <Route path='/productos/:id' element={<ProductoDetalle/>}/>
-            <Route path="/admin"   element={adminLogueado ? <Admin setLogueadoAdmin={manejarAdmin} admin={adminLogueado}/> 
-            : <Navigate to="/loginadmin" replace/>}/>
+            <Route path="/admin"   element={admin ? <Admin/> : <Navigate to="/loginadmin" replace/>}/>
             <Route path="/loginadmin" element={<LoginAdmin/>}/>
           </Routes>
         </div>

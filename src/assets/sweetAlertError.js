@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 export function dispararSweetError(message){
-    Swal.fire({
+    return Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: message,

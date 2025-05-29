@@ -29,7 +29,7 @@ export function AdminProvider({ children }) {
     };
 
     return (
-        <AdminContext.Provider value={value}>
+        <AdminContext.Provider value={{ admin, loginAdmin, logoutAdmin }}>
             {children}
         </AdminContext.Provider>
     );

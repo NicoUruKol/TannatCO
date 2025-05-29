@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
+import { Navigate, useLocation } from 'react-router-dom';
+import { useAuthContext } from '../contexts/LoginContext';
 
 export default function Carrito({setLogueadoUser}) {
     const {productosCarrito, eliminarProducto, vaciarCarrito} = useContext(CarritoContext);
@@ -57,9 +59,10 @@ export default function Carrito({setLogueadoUser}) {
                             Vaciar carrito
                         </button>
                     </div>
-                    <Link to="/pagos" className="boton-resumen-container" >
+                    <Link to="/login" state={{ from: "/pagos" }} className="boton-resumen-container">
                         <button onClick={setLogueadoUser} className="boton-resumen ir-a-pagar">Ir a pagar</button>
                     </Link>
+
                 </div>
 
             </div>

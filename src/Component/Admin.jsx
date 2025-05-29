@@ -1,6 +1,9 @@
+import { useAdminContext } from '../contexts/AdminContext';
 import '../styles/admin.css';
 
 export default function Admin({ setLogueadoAdmin }) {
+    const {logoutAdmin} = useAdminContext();
+    
     return (
         <div className="admin-container">
             <h2>Panel de Administración</h2>
@@ -19,7 +22,7 @@ export default function Admin({ setLogueadoAdmin }) {
                 <li>✅ Supervisar el stock disponible en tiempo real.</li>
             </ul>
 
-            <button onClick={setLogueadoAdmin}>
+            <button onClick={logoutAdmin}>
                 Cerrar sesión Admin
             </button>
         </div>
