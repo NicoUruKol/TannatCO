@@ -1,1 +1,0 @@
-import{j as t}from"./index-cvAt-aN6.js";import"./react-DJG_os-6.js";import"./firebase-B8nZo91v.js";function n(){return t.jsx(t.Fragment,{children:"Contacto en desarrollo, disculpe!"})}export{n as default};
