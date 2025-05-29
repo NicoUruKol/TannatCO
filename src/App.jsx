@@ -1,47 +1,46 @@
-  import './App.css'
-  import { useState } from 'react'
-  import Home from './layouts/Home'
-  import { Routes, Route, Navigate } from 'react-router-dom';
-  import { useAuthContext } from "./contexts/LoginContext";
-  import Nav from './Component/Nav';
-  import ProductosContainer from './Component/ProductosConteiner';
-  import Carrito from './Component/Carrito';
-  import AboutUs from './Component/AboutUs';
-  import Contacto from './Component/Contacto';
-  import ProductoDetalle from './Component/ProductoDetalle';
-  import Admin from './Component/Admin';
-  import Login from './Component/Login';
-  import LoginAdmin from './Component/LoginAdmin';
-  import Pagos from './Component/Pagos';
-  import RegistroUser from './Component/Registro';
+  import './App.css';
+import { useState, lazy, Suspense } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useAuthContext } from "./contexts/LoginContext";
 import { useAdminContext } from './contexts/AdminContext';
-  
-  function App() {
-    const { currentUser } = useAuthContext();
-    const {admin}= useAdminContext();
-  
+import Nav from './Component/Nav';
+import Home from './layouts/Home';
 
-    return (
+const ProductosContainer = lazy(() => import('./Component/ProductosConteiner'));
+const Carrito = lazy(() => import('./Component/Carrito'));
+const Pagos = lazy(() => import('./Component/Pagos'));
+const Admin = lazy(() => import('./Component/Admin'));
+const AboutUs = lazy(() => import('./Component/AboutUs'));
+const Contacto = lazy(() => import('./Component/Contacto'));
+const ProductoDetalle = lazy(() => import('./Component/ProductoDetalle'));
+const Login = lazy(() => import('./Component/Login'));
+const LoginAdmin = lazy(() => import('./Component/LoginAdmin'));
+const RegistroUser = lazy(() => import('./Component/Registro'));
 
-        <div>
-          <Nav/>
-          <Routes>
-            <Route path='/aboutUs' element={<AboutUs/>}/>
-            <Route path="/" element={<Home />} />
-            <Route path='/login' element={<Login/>}/>
-            <Route path="/registro" element={<RegistroUser />} />
-            <Route path='/productos' element={<ProductosContainer/>} />
-            <Route path="/carrito" element={<Carrito/>} />
-            <Route path="/pagos" element={currentUser ? <Pagos /> : <Navigate to="/login" replace />} />
-            <Route path='/contacto' element={<Contacto/>}/>
-            <Route path='/productos/:id' element={<ProductoDetalle/>}/>
-            <Route path="/admin"   element={admin ? <Admin/> : <Navigate to="/loginadmin" replace/>}/>
-            <Route path="/loginadmin" element={<LoginAdmin/>}/>
-          </Routes>
-        </div>
+function App() {
+  const { currentUser } = useAuthContext();
+  const { admin } = useAdminContext();
 
-    )
-  }
+  return (
+    <div>
+      <Nav />
+      <Suspense fallback={<div style={{ textAlign: "center" }}>Cargando...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registro" element={<RegistroUser />} />
+          <Route path="/productos" element={<ProductosContainer />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/pagos" element={currentUser ? <Pagos /> : <Navigate to="/login" replace />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/productos/:id" element={<ProductoDetalle />} />
+          <Route path="/admin" element={admin ? <Admin /> : <Navigate to="/loginadmin" replace />} />
+          <Route path="/loginadmin" element={<LoginAdmin />} />
+        </Routes>
+      </Suspense>
+    </div>
+  );
+}
 
-  export default App
-
+export default App;

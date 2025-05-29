@@ -7,7 +7,7 @@
   --color-foot: rgb(210,210,210);
   --color-header: rgb(237, 227, 206);
   --color-header-suave: rgb(237, 227, 206, 0.5);
-  --color-boxShadow: rgba(87,27,45, 2);
+  --color-boxShadow: rgba(87,2)7,45, 2;
   --color-resenaContainer: rgba(237, 227, 206, 0.5);
   --color-resenaPerse: rgba(210, 210, 210, 0.5);
   font-size: 1rem;
@@ -22,5 +22,8 @@ body {
 main {
   flex: 1;
 }
+
+
+
 
 

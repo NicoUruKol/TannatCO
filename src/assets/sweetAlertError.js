@@ -7,6 +7,14 @@ export function dispararSweetError(message){
             text: message,
             confirmButtonText: 'Entendido',
             timer: 2000,
-            showConfirmButton: false
-        });
-    }
+            showConfirmButton: false,
+            background: '#fdf6f0', 
+            color: '#333333',      
+            iconColor: '#571B2D', 
+            customClass: {
+            popup: 'mi-sweet-popup',
+            title: 'mi-sweet-title',
+            confirmButton: 'mi-sweet-confirm'
+        }
+    });
+}
