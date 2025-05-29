@@ -1,0 +1,1 @@
+import{S as i}from"./sweetalert2-DWO__QVt.js";function n(t,o,e){return i.fire({title:t,text:o,icon:e,timer:2e3,showConfirmButton:!1,background:"#571B2D",color:"#333333",iconColor:"#fdf6f0",customClass:{popup:"mi-sweet-popup",title:"mi-sweet-title",confirmButton:"mi-sweet-confirm"}})}export{n as d};
