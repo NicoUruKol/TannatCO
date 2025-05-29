@@ -4,6 +4,7 @@ import { useAuthContext } from '../contexts/LoginContext';
 import "../styles/login.css";
 import { dispararSweetConfirmar } from '../assets/sweetAlert';
 import { dispararSweetError } from '../assets/sweetAlertError';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -12,6 +13,7 @@ export default function Login() {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from || '/';
+    const [mostrarPassword, setMostrarPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -43,7 +45,19 @@ export default function Login() {
             <input type="email" value={email} placeholder="tucorreo@ejemplo.com"onChange={e => setEmail(e.target.value)} required />
 
             <label>Contraseña:</label>
-            <input type="password" value={password} placeholder="Mínimo 6 caracteres" onChange={e => setPassword(e.target.value)} required />
+            <div className='input-password-container'>
+                <input 
+                type={mostrarPassword ? "text" : "password"} 
+                value={password} 
+                placeholder="Mínimo 6 caracteres" 
+                onChange={e => setPassword(e.target.value)} 
+                required />
+                <span 
+                    className="icon-eye"
+                    onClick={() => setMostrarPassword(!mostrarPassword)}>
+                    {mostrarPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+            </div>
 
             <button type="submit">Iniciar sesión</button>
         </form>

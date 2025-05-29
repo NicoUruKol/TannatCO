@@ -91,3 +91,27 @@
     padding: 0.1rem 0.4rem;
     border-radius: 50%;
 }
+
+.nav-superior-link-cierre{
+    color: var(--color-separador);
+    background-color: var(--color-header);
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    background-color: var(--color-resenaPerse);
+    color: var(--color-separador); 
+    font-weight:bold;
+    border: solid 1px var(--color-separador);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.nav-superior-link.active {
+    color: var(--color-separador); 
+    background-color: var(--color-header);
+    font-weight: bold;
+    border: solid 1px var(--color-resenaPerse);
+    border-radius: 4px;
+    padding: 1px;
+}

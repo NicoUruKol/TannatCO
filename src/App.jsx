@@ -1,10 +1,13 @@
   import './App.css';
-import { useState, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from "./contexts/LoginContext";
 import { useAdminContext } from './contexts/AdminContext';
 import Nav from './Component/Nav';
 import Home from './layouts/Home';
+import ScrollToTop from './Component/ScrollToTop';
+
+
 
 const ProductosContainer = lazy(() => import('./Component/ProductosConteiner'));
 const Carrito = lazy(() => import('./Component/Carrito'));
@@ -24,6 +27,7 @@ function App() {
   return (
     <div>
       <Nav />
+      <ScrollToTop/>
       <Suspense fallback={<div style={{ textAlign: "center" }}>Cargando...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />

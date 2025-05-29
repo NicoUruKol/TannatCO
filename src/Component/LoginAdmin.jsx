@@ -4,12 +4,14 @@ import { useAdminContext } from '../contexts/AdminContext';
 import { dispararSweetConfirmar } from '../assets/sweetAlert.js';
 import { dispararSweetError } from "../assets/sweetAlertError.js";
 import '../styles/loginAdmin.css'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function LoginAdmin() {
     const { admin, loginAdmin } = useAdminContext();
     const [adminInput, setAdminInput] = useState('');
     const [passwordAdminInput, setPasswordAdminInput] = useState('');
-    const [redirect, setRedirect] = useState(false); 
+    const [redirect, setRedirect] = useState(false);
+    const [mostrarPassword, setMostrarPassword] = useState(false);
 
     const handleLoginAdmin = () => {
         const usuario = adminInput.trim();
@@ -35,16 +37,24 @@ export default function LoginAdmin() {
             <input 
                 type="text" 
                 value={adminInput} 
-                onChange={e => setAdminInput(e.target.value)} 
+                onChange={e => setAdminInput(e.target.value.toLowerCase())} 
                 placeholder="Usuario"
-            />
+                />
             <label>Contraseña:</label>
-            <input 
-                type="password" 
-                value={passwordAdminInput} 
-                onChange={e => setPasswordAdminInput(e.target.value)} 
-                placeholder="Contraseña"
-            />
+            <div className="input-password-container">
+                <input 
+                    type={mostrarPassword ? "text" : "password"} 
+                    value={passwordAdminInput} 
+                    onChange={e => setPasswordAdminInput(e.target.value)} 
+                    placeholder="Contraseña"
+                />
+                <span 
+                    className="icon-eye"
+                    onClick={() => setMostrarPassword(!mostrarPassword)}
+                >
+                    {mostrarPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+            </div>
             <button onClick={handleLoginAdmin}>Iniciar sesión Admin</button>
         </div>
     );

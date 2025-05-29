@@ -3,7 +3,6 @@ import Banner from './Main/banner';
 import BodegaMes from './Main/bodegaMes';
 import Corte from './Main/corte';
 
-
 function Main() {  
     return ( 
         <main>  

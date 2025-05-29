@@ -4,11 +4,13 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "../styles/registro.css";
 import { dispararSweetConfirmar } from '../assets/sweetAlert';
 import { dispararSweetError } from '../assets/sweetAlertError'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function RegistroUser() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const [mostrarPassword, setMostrarPassword] = useState(false);
 
     const handleRegistroUser = async (e) => {
         e.preventDefault();
@@ -37,14 +39,20 @@ export default function RegistroUser() {
             />
 
             <label>Contraseña:</label>
-            <input 
-                type="password" 
-                value={password} 
-                placeholder="Mínimo 6 caracteres" 
-                onChange={e => setPassword(e.target.value)} 
-                required 
-            />
-
+            <div className='input-password-container'>
+                <input 
+                    type={mostrarPassword ? "text" : "password"} 
+                    value={password} 
+                    placeholder="Mínimo 6 caracteres" 
+                    onChange={e => setPassword(e.target.value)} 
+                    required 
+                />
+                <span 
+                    className="icon-eye"
+                    onClick={() => setMostrarPassword(!mostrarPassword)}>
+                    {mostrarPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+            </div>
             <button type="submit">Registrarse</button>
         </form>
     );

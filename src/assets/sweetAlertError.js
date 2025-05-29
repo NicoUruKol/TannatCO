@@ -8,9 +8,9 @@ export function dispararSweetError(message){
             confirmButtonText: 'Entendido',
             timer: 2000,
             showConfirmButton: false,
-            background: '#fdf6f0', 
-            color: '#333333',      
-            iconColor: '#571B2D', 
+            background: '#571B2D', 
+            color: '#fdf6f0',      
+            iconColor: '#fdf6f0', 
             customClass: {
             popup: 'mi-sweet-popup',
             title: 'mi-sweet-title',

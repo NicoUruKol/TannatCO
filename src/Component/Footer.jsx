@@ -2,6 +2,7 @@ import "../styles/footer.css"
 import instagram from '../assets/instagram.svg'
 import whatsapp from '../assets/whatsapp.svg'
 import facebook from '../assets/facebook.svg'
+import { Link } from 'react-router-dom';
 
 export default function Footer(){
     return (
@@ -38,7 +39,9 @@ export default function Footer(){
         
             <section className="footer-section">
                 <a href="#contacto-form" className="corte-info">Contacto</a>
-                <a href="#" className="corte-info">Quienes Somos</a>
+                <Link to="/aboutUs">                 
+                    <a href="#" className="corte-info">Quienes Somos</a>
+                </Link>
                 <a href="#" className="corte-info">Preguntas Frecuentes</a>
                 <a href="#" className="corte-info">Políticas de Reembolso</a>
             </section>

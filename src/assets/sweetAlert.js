@@ -7,9 +7,9 @@ export function dispararSweetConfirmar(titulo, texto, icon) {
         icon: icon,
         timer: 2000,
         showConfirmButton: false,
-        background: '#571B2D', 
+        background: '#fdf6f0', 
         color: '#333333',      
-        iconColor: '#fdf6f0', 
+        iconColor: '#571B2D', 
         customClass: {
             popup: 'mi-sweet-popup',
             title: 'mi-sweet-title',
