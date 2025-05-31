@@ -13,6 +13,7 @@
     "predeploy": "npm run build"
   },
   "dependencies": {
+    "bootstrap": "^5.3.6",
     "firebase": "^11.8.1",
     "lucide": "^0.511.0",
     "lucide-react": "^0.511.0",

@@ -39,8 +39,8 @@ export default function Footer(){
         
             <section className="footer-section">
                 <a href="#contacto-form" className="corte-info">Contacto</a>
-                <Link to="/aboutUs">                 
-                    <a href="#" className="corte-info">Quienes Somos</a>
+                <Link to="/aboutUs" className="corte-info">
+                    Quienes Somos
                 </Link>
                 <a href="#" className="corte-info">Preguntas Frecuentes</a>
                 <a href="#" className="corte-info">Políticas de Reembolso</a>
