@@ -11,6 +11,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.detalle-container h2{
+    background-color: var(--color-fondo);
+    color: var(--color-separador);
+}
+
 .detalle-imagen {
     width: 300px;
     height: 300px;
@@ -30,6 +35,7 @@
 }
 .detalle-info-peso {
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .detalle-contador {
@@ -69,6 +75,7 @@
     transition: background-color 0.3s ease;
     margin: auto 0;
     padding: 0.6rem 1.2rem;
+    align-self: normal;
 }
 
 .agregar-boton:hover {
@@ -81,8 +88,8 @@
     border: solid 1px var(--color-separador);
     border-radius: 0.3rem;
     color: var(--color-separador);
-    width: 14rem;
-    margin-right: 1rem;
+    width: 13rem;
+
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
@@ -98,7 +105,7 @@
     border: solid 1px var(--color-separador);
     border-radius: 0.3rem;
     color: var(--color-separador);
-    width: 14rem;
+    width: 13rem;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;

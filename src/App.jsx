@@ -6,6 +6,7 @@ import { useAdminContext } from './contexts/AdminContext';
 import Nav from './Component/Nav';
 import Home from './layouts/Home';
 import ScrollToTop from './Component/ScrollToTop';
+import FormularioProducto from './Component/FormularioProducto';
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/productos/:id" element={<ProductoDetalle />} />
           <Route path="/admin" element={admin ? <Admin /> : <Navigate to="/loginadmin" replace />} />
           <Route path="/loginadmin" element={<LoginAdmin />} />
+          <Route path="/formularioProducto" element={<FormularioProducto/>}/>
         </Routes>
       </Suspense>
     </div>

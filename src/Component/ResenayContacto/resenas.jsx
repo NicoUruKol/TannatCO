@@ -5,9 +5,8 @@ export default function Resenas(){
         <section className="reseña-contacto">
             <div className="reseña-container">
                 <div className="reseña-perse-1">
-                    <p className="parrafo-reseñas">
-                        <h3>Nuestros clientes nos comparten su experiencia</h3>
-                    </p>
+                    <p className="parrafo-reseñas"></p>
+                    <h3>Nuestros clientes nos comparten su experiencia</h3>
                 </div>
                 {[
                 { titulo: "Impecable", texto: "Excelente relación precio-calidad, recomiendo", autor: "Paula Rocío" },

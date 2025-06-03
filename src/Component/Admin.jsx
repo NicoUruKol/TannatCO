@@ -1,4 +1,5 @@
 import { useAdminContext } from '../contexts/AdminContext';
+import { Link } from 'react-router-dom';
 import '../styles/admin.css';
 
 export default function Admin({ setLogueadoAdmin }) {
@@ -14,7 +15,11 @@ export default function Admin({ setLogueadoAdmin }) {
 
             <h3>¿Qué podés hacer como administrador?</h3>
             <ul>
-                <li>✅ Agregar nuevos productos al catálogo.</li>
+                <li>
+                    <Link to="/formularioProducto" className="adminLink">
+                        ✅ Agregar nuevos productos al catálogo.
+                    </Link>
+                </li>
                 <li>✅ Editar información de productos existentes.</li>
                 <li>✅ Eliminar productos del sistema.</li>
                 <li>✅ Ver y gestionar los pedidos realizados.</li>
