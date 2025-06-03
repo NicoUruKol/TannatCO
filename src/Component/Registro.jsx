@@ -14,16 +14,36 @@ export default function RegistroUser() {
 
     const handleRegistroUser = async (e) => {
         e.preventDefault();
+        
         const auth = getAuth();
         try {
+            
             await createUserWithEmailAndPassword(auth, email, password);
+            
             dispararSweetConfirmar('¡Éxito!', 'Usuario creado con éxito', 'success');
-            
-            
             setTimeout(() => navigate('/'), 1500); 
         } catch (error) {
-            dispararSweetError(`Error al crear usuario: ${error.message}`);
+        console.error('Error de Firebase:', error);  // IMPORTANTE para debug
+
+        let mensajeError = '';
+
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                mensajeError = 'El correo ya está registrado.';
+                break;
+            case 'auth/invalid-email':
+                mensajeError = 'El correo ingresado no es válido.';
+                break;
+            case 'auth/weak-password':
+                mensajeError = 'La contraseña debe tener al menos 6 caracteres.';
+                break;
+            default:
+                mensajeError = 'Ocurrió un error inesperado. Intenta nuevamente.';
+                break;
         }
+
+        dispararSweetError(mensajeError);
+    }
     };
 
     return (

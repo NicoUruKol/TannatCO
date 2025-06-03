@@ -24,17 +24,29 @@ export default function Login() {
 
             setTimeout(() => navigate(from, { replace: true }), 1500);
         } catch (error) {
-            const errorCode = error.code;
+            console.error('Error de Firebase:', error);
+            
+            let mensajeError = '';
 
-            let message = 'Error al iniciar sesión. Inténtalo de nuevo.';
-            if (errorCode === 'auth/wrong-password') {
-                message = 'La contraseña es incorrecta.';
-            } else if (errorCode === 'auth/user-not-found') {
-                message = 'No existe un usuario con ese email.';
-            }
+            switch (error.code) {
+    case 'auth/invalid-credential':
+        mensajeError = 'Email o contraseña incorrectos.';
+        break;
+    case 'auth/invalid-email':
+        mensajeError = 'El formato del correo es inválido.';
+        break;
+    case 'auth/too-many-requests':
+        mensajeError = 'Demasiados intentos fallidos. Espera un momento.';
+        break;
+    case 'auth/user-disabled':
+        mensajeError = 'Este usuario ha sido deshabilitado.';
+        break;
+    default:
+        mensajeError = `Error desconocido: ${error.code}`;
+        break;
+}
 
-
-            dispararSweetError('Oops...', message, 'error');
+            dispararSweetError(`Error al iniciar sesión: ${mensajeError}`);
         }
     };
 

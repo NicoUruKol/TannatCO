@@ -43,8 +43,8 @@ function Nav() {
                     <li><NavLink className="nav-link" to="/productos">Productos</NavLink></li>
                 </ul>
                 <div>
-                    <NavLink className="nav-link carrito-link" to="/carrito">
-                        <ShoppingCart size={52} />
+                    <NavLink className="nav-linkCarrito-link" to="/carrito">
+                        <ShoppingCart size={56} />
                         {productosCarrito.length > 0 && (
                             <span className="carrito-contador">
                                 {productosCarrito.length}
