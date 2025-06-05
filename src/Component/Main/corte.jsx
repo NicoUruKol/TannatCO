@@ -18,7 +18,7 @@ export default function Corte(){
             <div className="corte-perse">
                 <img src={Truck} alt=""/>
                 <p><strong>envios gratis</strong></p>
-                <p>a CABA desde $ 30.000</p>
+                <p>en amba desde $ 40.000</p>
             </div>
         </section>
     )

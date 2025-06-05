@@ -3,7 +3,7 @@ import Tractor from '../../assets/tractor-tannat.jpg'
 
 export default function Uruguay6(){
     return(
-        <section class="nosotros-5">
+        <section className="nosotros-6">
             <div>
                 <img src={Enologo} alt=""/>
             </div>
