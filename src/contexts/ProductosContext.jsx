@@ -1,4 +1,8 @@
-export const agregarProducto = async (producto) => {
+import React, { createContext, useState, useContext} from "react";
+
+const ProductosContext = createContext();
+
+export function ProductosProvider({ children}){
     try {
         const respuesta = await fetch('https://68100d9127f2fdac24101f8a.mockapi.io/productos', {
             method: 'POST',
@@ -14,3 +18,4 @@ export const agregarProducto = async (producto) => {
         throw error;
     }
 };
+
