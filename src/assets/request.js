@@ -1,4 +1,4 @@
-export const agregarProducto = async (producto) => {
+/*export const agregarProducto = async (producto) => {
     try {
         const respuesta = await fetch('https://68100d9127f2fdac24101f8a.mockapi.io/productos', {
             method: 'POST',
@@ -13,4 +13,4 @@ export const agregarProducto = async (producto) => {
     } catch (error) {
         throw error;
     }
-};
+};*/

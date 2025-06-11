@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useProductos } from '../context/ProductosContext';
+import { useProductos } from '../contexts/ProductosContext';
 
 export default function EditarProducto() {
     const { id } = useParams();

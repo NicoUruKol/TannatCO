@@ -20,7 +20,11 @@ export default function Admin({ setLogueadoAdmin }) {
                         ✅ Agregar nuevos productos al catálogo.
                     </Link>
                 </li>
-                <li>✅ Editar información de productos existentes.</li>
+                <li>
+                    <Link to="/editarProducto" className="adminLink">
+                        ✅ Editar información de productos existentes.
+                    </Link>
+                </li>
                 <li>✅ Eliminar productos del sistema.</li>
                 <li>✅ Ver y gestionar los pedidos realizados.</li>
                 <li>✅ Acceder a información de usuarios registrados.</li>

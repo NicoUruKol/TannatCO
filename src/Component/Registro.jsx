@@ -23,7 +23,7 @@ export default function RegistroUser() {
             dispararSweetConfirmar('¡Éxito!', 'Usuario creado con éxito', 'success');
             setTimeout(() => navigate('/'), 1500); 
         } catch (error) {
-        console.error('Error de Firebase:', error);  // IMPORTANTE para debug
+        console.error('Error de Firebase:', error);
 
         let mensajeError = '';
 

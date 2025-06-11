@@ -7,6 +7,7 @@ import Nav from './Component/Nav';
 import Home from './layouts/Home';
 import ScrollToTop from './Component/ScrollToTop';
 import FormularioProducto from './Component/FormularioProducto';
+import EditarProducto from './Component/EditarProducto';
 
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/admin" element={admin ? <Admin /> : <Navigate to="/loginadmin" replace />} />
           <Route path="/loginadmin" element={<LoginAdmin />} />
           <Route path="/formularioProducto" element={<FormularioProducto/>}/>
+          <Route path="/editarProducto" element={<EditarProducto/>}/>
         </Routes>
       </Suspense>
     </div>
