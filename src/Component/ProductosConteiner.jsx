@@ -12,10 +12,13 @@ export default function ProductosContainer() {
     }, []);
 
     return (
-        <div className="productos-container">
-        {productos.map(producto => (
-            <Card key={producto.id} producto={producto} />
-        ))}
+        <div>
+            <h2>PRODUCTOS</h2>    
+            <div className="productos-container">
+                {productos.map(producto => (
+                <Card key={producto.id} producto={producto} />
+            ))}
+            </div>
         </div>
     );
 }

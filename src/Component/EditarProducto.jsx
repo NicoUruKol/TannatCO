@@ -11,6 +11,7 @@ const EditarProducto = () => {
     const { productos, editarProducto } = useProductos();
     const producto = productos.find((p) => String(p.id) === id);
 
+
     const [form, setForm] = useState({
         name: "",
         price: "",

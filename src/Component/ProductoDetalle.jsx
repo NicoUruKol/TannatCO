@@ -12,7 +12,7 @@ import { useProductos } from "../contexts/ProductosContext";
 export default function ProductoDetalle({}){
     const {agregarAlCarrito} = useContext(CarritoContext)
     const { id } = useParams();
-    const { productos, cargando, error } = useProductos(); // Contexto
+    const { productos, cargando, error } = useProductos();
     const [producto, setProducto] = useState(null);
     const [cantidad, setCantidad] = useState(1);
 
