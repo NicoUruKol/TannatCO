@@ -1,26 +1,21 @@
-import { useProductos } from "../contexts/ProductosContext";
-import "../styles/productos.css";
+import { useState, useEffect } from "react";
 import Card from "./Card";
-import Footer from "./Footer";
 
-export default function ProductosContainer({ funcionCarrito }) {
-    const { productos, error, cargando } = useProductos();
+export default function ProductosContainer() {
+    const [productos, setProductos] = useState([]);
 
-    if (cargando) return <p>Cargando Productos...</p>;
-    if (error) return <p>{error}</p>;
+    useEffect(() => {
+        fetch('https://68100d9127f2fdac24101f8a.mockapi.io/productos')
+        .then(res => res.json())
+        .then(data => setProductos(data))
+        .catch(err => console.error(err));
+    }, []);
 
     return (
-        <div>
         <div className="productos-container">
-            {productos.map((producto) => (
-            <Card
-                key={producto.id}
-                producto={producto}
-                funcionCarrito={funcionCarrito}
-            />
-            ))}
-        </div>
-        <Footer />
+        {productos.map(producto => (
+            <Card key={producto.id} producto={producto} />
+        ))}
         </div>
     );
 }

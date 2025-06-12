@@ -26,7 +26,7 @@ export default function Carrito({setLogueadoUser}) {
                     </div>
 
                     {productosCarrito.length > 0 ? productosCarrito.map((producto) => (
-                        <div key={productosCarrito.id} className="carrito-producto">
+                        <div key={producto.id} className="carrito-producto">
                             <img className="carrito-imagen" src={producto.avatar} alt={producto.name} />
                             <h2 className="carrito-nombre">{producto.name}</h2>
                             <span style={{ color: "black" }}>x {producto.cantidad}</span>

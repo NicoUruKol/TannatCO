@@ -6,8 +6,9 @@ import { useAdminContext } from './contexts/AdminContext';
 import Nav from './Component/Nav';
 import Home from './layouts/Home';
 import ScrollToTop from './Component/ScrollToTop';
-import FormularioProducto from './Component/FormularioProducto';
+import AgregarProducto from './Component/AgregarProducto';
 import EditarProducto from './Component/EditarProducto';
+import EliminarProducto from './Component/EliminarProducto';
 
 
 
@@ -43,8 +44,13 @@ function App() {
           <Route path="/productos/:id" element={<ProductoDetalle />} />
           <Route path="/admin" element={admin ? <Admin /> : <Navigate to="/loginadmin" replace />} />
           <Route path="/loginadmin" element={<LoginAdmin />} />
-          <Route path="/formularioProducto" element={<FormularioProducto/>}/>
-          <Route path="/editarProducto" element={<EditarProducto/>}/>
+          <Route path="/editarProducto" element={<Navigate to="/admin/editarProducto" replace />} />
+          <Route path="/admin/editarProducto" element={admin ? <ProductosContainer modoAdmin={true} /> : <Navigate to="/loginadmin" replace />} />
+          <Route path="/admin/editarProducto/:id" element={admin ? <EditarProducto /> : <Navigate to="/loginadmin" replace />} />
+          <Route path="/agregarProducto" element={admin ? <AgregarProducto /> : <Navigate to="/loginadmin" replace />}/>
+          <Route path="/eliminarProducto" element={<Navigate to="/admin/eliminarProducto" replace />} />
+          <Route path="/admin/eliminarProducto/:id" element={admin ? <EliminarProducto /> : <Navigate to="/loginadmin" replace />} />
+          <Route path="/admin/eliminarProducto" element={admin ? <ProductosContainer modoAdmin={true} /> : <Navigate to="/loginadmin" replace />} />
         </Routes>
       </Suspense>
     </div>

@@ -16,7 +16,7 @@ export default function Admin({ setLogueadoAdmin }) {
             <h3>¿Qué podés hacer como administrador?</h3>
             <ul>
                 <li>
-                    <Link to="/formularioProducto" className="adminLink">
+                    <Link to="/agregarProducto" className="adminLink">
                         ✅ Agregar nuevos productos al catálogo.
                     </Link>
                 </li>
@@ -25,7 +25,11 @@ export default function Admin({ setLogueadoAdmin }) {
                         ✅ Editar información de productos existentes.
                     </Link>
                 </li>
-                <li>✅ Eliminar productos del sistema.</li>
+                <li>
+                    <Link to="/eliminarProducto" className='adminLink'>
+                        ✅ Eliminar productos del sistema.
+                    </Link>
+                </li>
                 <li>✅ Ver y gestionar los pedidos realizados.</li>
                 <li>✅ Acceder a información de usuarios registrados.</li>
                 <li>✅ Supervisar el stock disponible en tiempo real.</li>
