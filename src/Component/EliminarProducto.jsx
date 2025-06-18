@@ -4,6 +4,7 @@ import { useProductos } from "../contexts/ProductosContext";
 import { dispararSweetConfirmar } from "../assets/sweetAlert";
 import { dispararSweetError } from "../assets/sweetAlertError";
 import { dispararSweetDoble } from "../assets/sweetAlertDoble";
+import "../styles/eliminarProducto.css"
 
 const EliminarProducto = () => {
     const { id } = useParams();
@@ -60,24 +61,24 @@ const EliminarProducto = () => {
     }
 
     return (
-        <div className="eliminar-producto-container" style={{ maxWidth: "400px", margin: "auto" }}>
-        <h2>Eliminar Producto</h2>
-        <img
-            src={producto.avatar}
-            alt={`Imagen de ${producto.name}`}
-            style={{ width: "100%", maxHeight: "200px", objectFit: "contain", marginBottom: "1rem" }}
-        />
-        <p>
-            ¿Deseas eliminar el producto <strong>{producto.name}</strong>?
-        </p>
-        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "1.5rem" }}>
-            <button onClick={handleEliminar}>
-            Eliminar
-            </button>
-            <button onClick={handleCancelar} style={{ padding: "0.5rem 1rem" }}>
-            Cancelar
-            </button>
-        </div>
+        <div className="eliminar-producto-container">
+            <h2>Eliminar Producto</h2>
+            <img
+                src={producto.avatar}
+                alt={`Imagen de ${producto.name}`}
+                style={{ width: "100%", maxHeight: "200px", objectFit: "contain", marginBottom: "1rem" }}
+            />
+            <p>
+                ¿Deseas eliminar el producto <strong>{producto.name}</strong>?
+            </p>
+            <div className="eliminar-button-container">
+                <button className="eliminar-producto-button" onClick={handleEliminar}>
+                Eliminar
+                </button>
+                <button className="eliminar-producto-button" onClick={handleCancelar} style={{ padding: "0.5rem 1rem" }}>
+                Cancelar
+                </button>
+            </div>
         </div>
     );
 };

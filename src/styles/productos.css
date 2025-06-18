@@ -24,7 +24,7 @@
 }
 
 .productos-image{
-    width: 100px;
+    width: 7rem;
     height: 8rem;
     border-radius: 8%;
     object-fit: contain;
@@ -58,6 +58,25 @@
     background-color: var(--color-header);
     color: var(--color-separador);
 }
+
+.productos-boton-admin{
+    width: 15rem;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    background-color: var(--color-fondo);
+    color: var(--color-separador);
+    border: solid 1px var(--color-separador);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.productos-boton-admin:hover {
+    background-color: var(--color-header);
+    color: var(--color-separador);
+}
+
 
 h2 {
     width: 100%;

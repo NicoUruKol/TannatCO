@@ -79,40 +79,43 @@ const EditarProducto = () => {
     }
 
     return (
-        <form className="form-editar-producto" onSubmit={handleSubmit}>
-        <label>
-            Nombre:
-            <input type="text" name="name" value={form.name} onChange={handleChange} />
-            {errors.name && <p className="error">{errors.name}</p>}
-        </label>
+        <div>
+            <h2>Editar Producto</h2>
+            <form className="form-editar-producto" onSubmit={handleSubmit}>
+                <label>
+                    Nombre:
+                    <input type="text" name="name" value={form.name} onChange={handleChange} />
+                    {errors.name && <p className="error">{errors.name}</p>}
+                </label>
 
-        <label>
-            Precio:
-            <input type="text" name="price" value={form.price} onChange={handleChange} />
-            {errors.price && <p className="error">{errors.price}</p>}
-        </label>
+                <label>
+                    Precio:
+                    <input type="text" name="price" value={form.price} onChange={handleChange} />
+                    {errors.price && <p className="error">{errors.price}</p>}
+                </label>
 
-        <label>
-            Descripción:
-            <textarea name="description" value={form.description} onChange={handleChange} />
-            {errors.description && <p className="error">{errors.description}</p>}
-        </label>
+                <label>
+                    Descripción:
+                    <textarea name="description" value={form.description} onChange={handleChange} />
+                    {errors.description && <p className="error">{errors.description}</p>}
+                </label>
 
-        <label>
-            URL de imagen:
-            <input type="text" name="avatar" value={form.avatar} onChange={handleChange} />
-            {errors.avatar && <p className="error">{errors.avatar}</p>}
-        </label>
+                <label>
+                    URL de imagen:
+                    <input type="text" name="avatar" value={form.avatar} onChange={handleChange} />
+                    {errors.avatar && <p className="error">{errors.avatar}</p>}
+                </label>
 
-        <div className="botones">
-            <button type="submit" disabled={Object.values(errors).some((e) => e) || Object.values(form).some((v) => !v.trim())}>
-            Guardar
-            </button>
-            <button type="button" onClick={handleCancelar}>
-            Cancelar
-            </button>
+                <div>
+                    <button className="botones" type="submit" disabled={Object.values(errors).some((e) => e) || Object.values(form).some((v) => !v.trim())}>
+                    Guardar
+                    </button>
+                    <button className="botones" type="button" onClick={handleCancelar}>
+                    Cancelar
+                    </button>
+                </div>
+            </form>
         </div>
-        </form>
     );
     };
 
