@@ -43,56 +43,54 @@ export default function FormularioProducto() {
         <div className="form-agregar-container">
             <h2>Agregar Producto</h2>
             <form className="form-agregar-producto" onSubmit={handleSubmit(onSubmit)}>
-                
-
                 <div>
-                <label>Nombre:</label>
-                <input
-                    {...register("name", {
-                    required: "El nombre es obligatorio.",
-                    validate: value => value.trim() !== "" || "No puede estar vacío."
-                    })}
-                />
-                {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
+                    <label>Nombre:</label>
+                    <input
+                        {...register("name", {
+                        required: "El nombre es obligatorio.",
+                        validate: value => value.trim() !== "" || "No puede estar vacío."
+                        })}
+                    />
+                    {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
                 </div>
 
                 <div>
-                <label>Precio:</label>
-                <input
-                    type="number"
-                    {...register("price", {
-                    required: "El precio es obligatorio.",
-                    valueAsNumber: true,
-                    min: { value: 0.01, message: "El precio debe ser mayor que 0." }
-                    })}
-                />
-                {errors.price && <p style={{ color: "red" }}>{errors.price.message}</p>}
+                    <label>Precio:</label>
+                    <input
+                        type="number"
+                        {...register("price", {
+                        required: "El precio es obligatorio.",
+                        valueAsNumber: true,
+                        min: { value: 0.01, message: "El precio debe ser mayor que 0." }
+                        })}
+                    />
+                    {errors.price && <p style={{ color: "red" }}>{errors.price.message}</p>}
                 </div>
 
                 <div>
-                <label>Descripción:</label>
-                <textarea
-                    {...register("description", {
-                    required: "La descripción es obligatoria.",
-                    minLength: { value: 11, message: "Debe tener más de 10 caracteres." }
-                    })}
-                />
-                {errors.description && <p style={{ color: "red" }}>{errors.description.message}</p>}
+                    <label>Descripción:</label>
+                    <textarea
+                        {...register("description", {
+                        required: "La descripción es obligatoria.",
+                        minLength: { value: 11, message: "Debe tener más de 10 caracteres." }
+                        })}
+                    />
+                    {errors.description && <p style={{ color: "red" }}>{errors.description.message}</p>}
                 </div>
 
                 <div>
-                <label>Avatar (URL):</label>
-                <input
-                    type="url"
-                    {...register("avatar", {
-                    required: "La URL es obligatoria.",
-                    pattern: {
-                        value: /^https?:\/\/.+\.(jpg|jpeg|png|webp|gif)$/i,
-                        message: "Debe ser una URL válida de imagen."
-                    }
-                    })}
-                />
-                {errors.avatar && <p style={{ color: "red" }}>{errors.avatar.message}</p>}
+                    <label>Avatar (URL):</label>
+                    <input
+                        type="url"
+                        {...register("avatar", {
+                        required: "La URL es obligatoria.",
+                        pattern: {
+                            value: /^https?:\/\/.+\.(jpg|jpeg|png|webp|gif)$/i,
+                            message: "Debe ser una URL válida de imagen."
+                        }
+                        })}
+                    />
+                    {errors.avatar && <p style={{ color: "red" }}>{errors.avatar.message}</p>}
                 </div>
                 <div>   
                     <button className="botones" type="submit">Agregar Producto</button>

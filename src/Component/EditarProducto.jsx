@@ -107,10 +107,10 @@ const EditarProducto = () => {
                 </label>
 
                 <div>
-                    <button className="botones" type="submit" disabled={Object.values(errors).some((e) => e) || Object.values(form).some((v) => !v.trim())}>
+                    <button className="editar-botones" type="submit" disabled={Object.values(errors).some((e) => e) || Object.values(form).some((v) => !v.trim())}>
                     Guardar
                     </button>
-                    <button className="botones" type="button" onClick={handleCancelar}>
+                    <button className="editar-botones" type="button" onClick={handleCancelar}>
                     Cancelar
                     </button>
                 </div>

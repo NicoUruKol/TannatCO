@@ -88,9 +88,10 @@
     border: solid 1px var(--color-separador);
     border-radius: 0.3rem;
     color: var(--color-separador);
-    width: 14rem;
-    margin-right: 1rem;
+    width: 13.3rem;
     padding: 0.6rem;
+
+
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
@@ -106,10 +107,11 @@
     border: solid 1px var(--color-separador);
     border-radius: 0.3rem;
     color: var(--color-separador);
-    width: 14rem;
+    width: 13.3rem;
     cursor: pointer;
     font-weight: bold;
     padding: 0.6rem;
+
     transition: background-color 0.3s ease;
 }
 

@@ -8,11 +8,13 @@
     margin-top: 1rem;
 }
 
-.admin-container h2 {
+.admin-h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--color-separador);
+    color: var(--color-header);
+    background-color: var(--color-separador);
     text-align: center;
+    text-transform: uppercase;
 }
 
 .admin-container p {

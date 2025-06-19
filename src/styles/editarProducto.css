@@ -4,16 +4,17 @@
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: var(--color-header);
+    background-color: var(--color-fondo);
     display: flex;
     flex-direction: column;
     gap: 20px;
     color: var(--color-separador);
+    
 }
 
-.form input[type="text"],
-.form input[type="number"],
-.form textarea {
+.form-editar-producto input[type="text"],
+.form-editar-producto input[type="number"],
+.form-editar-producto textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--color-separador);
@@ -21,32 +22,35 @@
     font-size: 16px;
     font-family: inherit;
     transition: border-color 0.3s;
+    border-left: 5px solid var(--color-separador);
+    border-radius: 0.5rem;
+    background-color: var(--color-header);
 }
 
-.form input:focus,
-.form textarea:focus {
+.form-editar-producto input:focus,
+.form-editar-producto textarea:focus {
     border-color: var(--color-separador);
     outline: none;
 }
 
-.form textarea {
+.form-editar-producto textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-.form button[type="submit"] {
-    background-color: var(--color-separador);
-    color: white;
+.form-editar-producto button[type="submit"] {
+    background-color: var(--color-fondo);
+    color: var(--color-separador);
     padding: 12px;
-    border: none;
+    border: solid 1px var(--color-separador);
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-.form button[type="submit"]:hover {
-    background-color: var(--color-separador);
+.form-editar-producto button[type="submit"]:hover {
+    background-color: var(--color-header);
 }
 
 .error {
@@ -65,10 +69,12 @@
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.25rem;
+    border-left: 5px solid var(--color-separador);
+    border-radius: 0.5rem;
 }
 
-.botones {
-    width: 15rem;
+.editar-botones {
+    width: 12rem;
     padding: 0.6rem 1.2rem;
     margin: 0 0.5rem;
     background-color: var(--color-fondo);
@@ -80,7 +86,7 @@
     transition: background-color 0.3s ease;
 }
 
-.botones:hover {
+.editar-botones:hover {
     background-color: var(--color-header);
     color: var(--color-separador);
 }
@@ -88,4 +94,16 @@
 button[disabled] {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+h2 {
+    width: 100%;
+    background-color: var(--color-separador);
+    color: var(--color-header);
+    text-align: center;
+    height: 4rem;
+    align-content: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+
 }

@@ -4,16 +4,16 @@
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: var(--color-header);
+    background-color: var(--color-fondo);
     display: flex;
     flex-direction: column;
     gap: 20px;
     color: var(--color-separador);
 }
 
-.form input[type="text"],
-.form input[type="number"],
-.form textarea {
+.-agregar-producto input[type="text"],
+.-agregar-producto input[type="number"],
+.-agregar-producto textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--color-separador);
@@ -23,18 +23,18 @@
     transition: border-color 0.3s;
 }
 
-.form input:focus,
-.form textarea:focus {
+.-agregar-producto input:focus,
+.-agregar-producto textarea:focus {
     border-color: var(--color-separador);
     outline: none;
 }
 
-.form textarea {
+.-agregar-producto textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-.form button[type="submit"] {
+.-agregar-producto button[type="submit"] {
     background-color: var(--color-separador);
     color: white;
     padding: 12px;
@@ -45,7 +45,7 @@
     transition: background-color 0.3s ease;
 }
 
-.form button[type="submit"]:hover {
+.agregar-producto button[type="submit"]:hover {
     background-color: var(--color-separador);
 }
 
@@ -65,10 +65,13 @@
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.25rem;
+    background-color: var(--color-header);
+    border-left: 5px solid var(--color-separador);
+    border-radius: 0.5rem;
 }
 
 .botones {
-    width: 15rem;
+    width: 12rem;
     padding: 0.6rem 1.2rem;
     margin: 0 0.5rem;
     background-color: var(--color-fondo);

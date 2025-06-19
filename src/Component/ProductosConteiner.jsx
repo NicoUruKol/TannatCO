@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Card from "./Card";
 import { Link, useNavigate } from "react-router-dom";
 import { useAdminContext } from "../contexts/AdminContext";
+import Footer from "./Footer";
+
 
 export default function ProductosContainer() {
     const [productos, setProductos] = useState([]);
@@ -36,6 +38,7 @@ export default function ProductosContainer() {
                 <Card key={producto.id} producto={producto} />
             ))}
             </div>
+            <Footer/>   
         </div>
     );
 }

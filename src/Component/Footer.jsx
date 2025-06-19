@@ -12,7 +12,7 @@ export default function Footer(){
                 <form action="https://formspree.io/f/xzzbeojd" method="POST">
                     <input name="nombre" id="nombre" type="text" placeholder="Nombre y Apellido"/>
                     <input name="mail" id="mail" type="email" placeholder="tucorreo@ejemplo.com"/>
-                    <button type="submit">Enviar</button>
+                    <button className= "footer-form-button" type="submit">Enviar</button>
                 </form>
             </div>
         

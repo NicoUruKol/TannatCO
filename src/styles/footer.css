@@ -40,7 +40,7 @@ form input, form button {
     font-size: 0.9rem;
 }
 
-form button {
+.footer-form-button {
     max-width: 8rem;
     background-color: var(--color-separador);
     color: var(--color-fondo);
