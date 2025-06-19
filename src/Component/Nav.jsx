@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
-import "../styles/nav.css";
 import { FaTools, FaUser } from "react-icons/fa";
 import { ShoppingCart } from "lucide-react";
 import Logo from '../assets/logo_photoshop_LARGO.png'
 import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
 import { useAuthContext } from "../contexts/LoginContext";
+import "../styles/nav.css";
 
 function Nav() {
     const { productosCarrito } = useContext(CarritoContext);

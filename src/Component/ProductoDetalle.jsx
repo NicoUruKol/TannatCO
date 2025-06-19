@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import "../styles/ProductoDetalle.css";
 import { dispararSweetConfirmar } from "../assets/sweetAlert";
 import { formatearPrecio } from "./FomatoPrecio";
 import Footer from "./Footer";
 import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
 import { useProductos } from "../contexts/ProductosContext";
+import "../styles/ProductoDetalle.css";
 
 
 export default function ProductoDetalle({}){

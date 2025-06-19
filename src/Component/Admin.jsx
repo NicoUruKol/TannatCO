@@ -2,7 +2,7 @@ import { useAdminContext } from '../contexts/AdminContext';
 import { Link } from 'react-router-dom';
 import '../styles/admin.css';
 
-export default function Admin({ setLogueadoAdmin }) {
+export default function Admin() {
     const {logoutAdmin} = useAdminContext();
     
     return (

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import "../styles/registro.css";
 import { dispararSweetConfirmar } from '../assets/sweetAlert';
 import { dispararSweetError } from '../assets/sweetAlertError'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import "../styles/registro.css";
 
 export default function RegistroUser() {
     const [email, setEmail] = useState('');

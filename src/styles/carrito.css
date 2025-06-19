@@ -65,12 +65,17 @@
 }
 
 .carrito-nombre {
-    font-size: 14px;
+    font-size: 1rem;
     text-align: center;
+    text-transform: capitalize;
+    color: var(--color-separador);
+    background-color: var(--color-header-suave);
+    font-weight: bold;
 }
 
 .carrito-precio {
     font-weight: bold;
+    font-size: 1rem;
     color: var(--color-separador);
 }
 
@@ -89,11 +94,12 @@
     color: var(--color-separador);
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
 }
 
 .carrito-resumen h3 {
     grid-column: 1 / -1;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 

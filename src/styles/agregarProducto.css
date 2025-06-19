@@ -11,9 +11,9 @@
     color: var(--color-separador);
 }
 
-.-agregar-producto input[type="text"],
-.-agregar-producto input[type="number"],
-.-agregar-producto textarea {
+.form-agregar-producto input[type="text"],
+.form-agregar-producto input[type="number"],
+.form-agregar-producto textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--color-separador);
@@ -21,32 +21,37 @@
     font-size: 16px;
     font-family: inherit;
     transition: border-color 0.3s;
+    border-left: 5px solid var(--color-separador);
+    border-radius: 0.5rem;
+    background-color: var(--color-header);
 }
 
-.-agregar-producto input:focus,
-.-agregar-producto textarea:focus {
+.form-agregar-producto input:focus,
+.form-agregar-producto textarea:focus {
     border-color: var(--color-separador);
     outline: none;
 }
 
-.-agregar-producto textarea {
+.form-agregar-producto textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-.-agregar-producto button[type="submit"] {
-    background-color: var(--color-separador);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
+.form-agregar-producto button[type="submit"] {
+    width: 12rem;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    background-color: var(--color-fondo);
+    color: var(--color-separador);
+    border: solid 1px var(--color-separador);
+    border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.agregar-producto button[type="submit"]:hover {
-    background-color: var(--color-separador);
+.form-agregar-producto button[type="submit"]:hover {
+    background-color: var(--color-header);
 }
 
 .error {
@@ -65,7 +70,6 @@
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.25rem;
-    background-color: var(--color-header);
     border-left: 5px solid var(--color-separador);
     border-radius: 0.5rem;
 }

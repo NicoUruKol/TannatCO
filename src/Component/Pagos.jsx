@@ -1,9 +1,9 @@
 import { formatearPrecio } from "./FomatoPrecio";
-import '../styles/pagos.css'
 import { dispararSweetConfirmar } from "../assets/sweetAlert";
 import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
 import { useNavigate } from "react-router-dom";
+import '../styles/pagos.css'
 
 export default function Pagos({}) {
     const {productosCarrito, vaciarCarrito} = useContext(CarritoContext)

@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useAdminContext } from '../contexts/AdminContext'; 
 import { dispararSweetConfirmar } from '../assets/sweetAlert.js';
 import { dispararSweetError } from "../assets/sweetAlertError.js";
-import '../styles/loginAdmin.css'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import '../styles/loginAdmin.css'
 
 export default function LoginAdmin() {
     const { admin, loginAdmin } = useAdminContext();
