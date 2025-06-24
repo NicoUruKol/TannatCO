@@ -3,6 +3,7 @@ import Card from "./Card";
 import { Link, useNavigate } from "react-router-dom";
 import { useAdminContext } from "../contexts/AdminContext";
 import Footer from "./Footer";
+import { Helmet } from "react-helmet";
 
 
 export default function ProductosContainer() {
@@ -24,6 +25,9 @@ export default function ProductosContainer() {
 
     return (
         <div>
+            <Helmet>
+                <meta name="description" content="Explora nuestra variedad de productos." />
+            </Helmet>
             <h2>PRODUCTOS</h2>
             {admin && (
                 <div>

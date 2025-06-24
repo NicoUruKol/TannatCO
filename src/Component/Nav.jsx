@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
 import { useAuthContext } from "../contexts/LoginContext";
 
+
 function Nav() {
     const { productosCarrito } = useContext(CarritoContext);
     const { currentUser, logout } = useAuthContext();

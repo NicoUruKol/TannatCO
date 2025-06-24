@@ -6,6 +6,7 @@ import { CarritoProvider } from './contexts/CarritoContexts'
 import { AuthProvider } from './contexts/LoginContext'
 import { AdminProvider } from './contexts/AdminContext'
 import { ProductosProvider } from './contexts/ProductosContext'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
