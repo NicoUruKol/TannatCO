@@ -40,21 +40,18 @@ export default function FormularioProducto() {
         navigate("/admin");
     }
     return (
-        <div className="form-agregar-container">
+        <div>
             <h2>Agregar Producto</h2>
             <form className="form-agregar-producto" onSubmit={handleSubmit(onSubmit)}>
-                <div>
                     <label>Nombre:</label>
-                    <input
+                    <input type="text"
                         {...register("name", {
                         required: "El nombre es obligatorio.",
                         validate: value => value.trim() !== "" || "No puede estar vacío."
                         })}
                     />
                     {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
-                </div>
 
-                <div>
                     <label>Precio:</label>
                     <input
                         type="number"
@@ -65,9 +62,7 @@ export default function FormularioProducto() {
                         })}
                     />
                     {errors.price && <p style={{ color: "red" }}>{errors.price.message}</p>}
-                </div>
 
-                <div>
                     <label>Descripción:</label>
                     <textarea
                         {...register("description", {
@@ -76,12 +71,10 @@ export default function FormularioProducto() {
                         })}
                     />
                     {errors.description && <p style={{ color: "red" }}>{errors.description.message}</p>}
-                </div>
 
-                <div>
                     <label>Avatar (URL):</label>
-                    <input
-                        type="url"
+                    <input 
+                        type="text"
                         {...register("avatar", {
                         required: "La URL es obligatoria.",
                         pattern: {
@@ -91,7 +84,7 @@ export default function FormularioProducto() {
                         })}
                     />
                     {errors.avatar && <p style={{ color: "red" }}>{errors.avatar.message}</p>}
-                </div>
+
                 <div>   
                     <button className="botones" type="submit">Agregar Producto</button>
                     <button className="botones" type="button" onClick={handleCancelar}>Cancelar</button>

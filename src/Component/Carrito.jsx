@@ -4,8 +4,7 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
-import { Navigate, useLocation } from 'react-router-dom';
-import { useAuthContext } from '../contexts/LoginContext';
+
 
 export default function Carrito({setLogueadoUser}) {
     const {productosCarrito, eliminarProducto, vaciarCarrito} = useContext(CarritoContext);
@@ -29,12 +28,12 @@ export default function Carrito({setLogueadoUser}) {
                         <div key={producto.id} className="carrito-producto">
                             <img className="carrito-imagen" src={producto.avatar} alt={producto.name} />
                             <h2 className="carrito-nombre">{producto.name}</h2>
-                            <span style={{ color: "black" }}>x {producto.cantidad}</span>
+                            <span>x {producto.cantidad}</span>
                             <div>
                                 <h3 className="carrito-precio">$ {formatearPrecio(producto.price)}</h3>
                             </div>
                             <div>
-                                <h3>$ {formatearPrecio(producto.cantidad * producto.price)}</h3>
+                                <h3 className="carrito-precio">$ {formatearPrecio(producto.cantidad * producto.price)}</h3>
                             </div>
                             <button 
                                 onClick={() => eliminarProducto(producto.id)} 

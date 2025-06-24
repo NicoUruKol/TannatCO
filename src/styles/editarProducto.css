@@ -9,7 +9,6 @@
     flex-direction: column;
     gap: 20px;
     color: var(--color-separador);
-    
 }
 
 .form-editar-producto input[type="text"],
@@ -39,13 +38,15 @@
 }
 
 .form-editar-producto button[type="submit"] {
+    width: 12rem;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
     background-color: var(--color-fondo);
     color: var(--color-separador);
-    padding: 12px;
     border: solid 1px var(--color-separador);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
