@@ -59,3 +59,53 @@
     color: var(--color-separador);
     font-size: 1.2rem;
 }
+
+.crear-usuario-container {
+    margin-top: 1rem;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.crear-usuario-container p {
+    margin-bottom: 0.5rem;
+    color: var(--color-separador);
+}
+
+.crear-usuario-container button {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-footerPerse);
+    color: var(--color-separador);
+    border: solid 1px var(--color-separador);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    max-width: 10rem;
+}
+
+.crear-usuario-container a {
+    text-decoration: none;
+}
+
+.crear-usuario-container button:focus {
+    box-shadow: 0 0 0 2px rgba(92, 107, 192, 0.5); /* efecto más sutil */
+    outline: none;
+}
+
+.crear-usuario-container button:hover {
+    background-color: var(--color-header);
+    color: var(--color-separador);
+}
+
+@keyframes fadeIn {
+    from{
+    opacity: 0;
+    transform: translateY(10px);
+}
+    to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
