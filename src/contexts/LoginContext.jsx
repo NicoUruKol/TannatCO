@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { useAdminContext } from './AdminContext';
 import { app } from '../auth/firebase';
 
 const LoginContext = createContext();
@@ -13,6 +14,8 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
     const auth = getAuth(app);
 
+    const adminCtx = useAdminContext();
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setCurrentUser(user);
@@ -20,9 +23,18 @@ export function AuthProvider({ children }) {
         });
 
         return unsubscribe;
-    }, [auth]);
+    }, []);
+
+    useEffect(() => {
+        if (adminCtx?.setCerrarSesionUser) {
+            adminCtx.setCerrarSesionUser(() => {
+                setCurrentUser(null);
+            });
+        }
+    }, [adminCtx]);
 
     const login = (email, password) => {
+        adminCtx?.logoutAdmin?.();
         return signInWithEmailAndPassword(auth, email, password);
     };
 

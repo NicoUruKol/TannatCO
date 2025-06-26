@@ -1,15 +1,30 @@
 import "../styles/carrito.css"
 import { formatearPrecio } from '../Component/FomatoPrecio';
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
+import { useAdminContext } from "../contexts/AdminContext";
+import { useAuthContext } from "../contexts/LoginContext";
 
 
 export default function Carrito({setLogueadoUser}) {
     const {productosCarrito, eliminarProducto, vaciarCarrito} = useContext(CarritoContext);
-    
+    const {currentUser} = useAuthContext();
+    const navigate = useNavigate();
+    const { admin } = useAdminContext();
+
     const subtotal = productosCarrito.reduce((acc, prod) => acc + (prod.price * prod.cantidad), 0);
+    
+
+    const handlePago = () => {
+    if (currentUser || admin) {
+        navigate("/pagos");
+    } else {
+        navigate("/login", { state: { from: "/pagos" } });
+    }
+};
+
 
     return (
         <div>
@@ -58,9 +73,9 @@ export default function Carrito({setLogueadoUser}) {
                             Vaciar carrito
                         </button>
                     </div>
-                    <Link to="/login" state={{ from: "/pagos" }} className="boton-resumen-container">
-                        <button onClick={setLogueadoUser} className="boton-resumen ir-a-pagar">Ir a pagar</button>
-                    </Link>
+                    <button onClick={handlePago} className="boton-resumen ir-a-pagar">
+                        Ir a pagar
+                    </button>
 
                 </div>
 

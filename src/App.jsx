@@ -9,6 +9,7 @@ import ScrollToTop from './Component/ScrollToTop';
 import AgregarProducto from './Component/AgregarProducto';
 import EditarProducto from './Component/EditarProducto';
 import EliminarProducto from './Component/EliminarProducto';
+import RutaProtegidaPagos from "./Component/RutaProtegidaPagos";
 
 
 
@@ -39,7 +40,7 @@ function App() {
           <Route path="/registro" element={<RegistroUser />} />
           <Route path="/productos" element={<ProductosContainer />} />
           <Route path="/carrito" element={<Carrito />} />
-          <Route path="/pagos" element={currentUser ? <Pagos /> : <Navigate to="/login" replace />} />
+          <Route path="/pagos" element={<RutaProtegidaPagos><Pagos /></RutaProtegidaPagos>} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/productos/:id" element={<ProductoDetalle />} />
           <Route path="/admin" element={admin ? <Admin /> : <Navigate to="/loginadmin" replace />} />
