@@ -80,7 +80,7 @@ const EditarProducto = () => {
 
     return (
         <div>
-            <h2>Editar Producto</h2>
+            <h2 className="h2-editar">Editar Producto</h2>
             <form className="form-editar-producto" onSubmit={handleSubmit}>
                 <label>
                     Nombre:
