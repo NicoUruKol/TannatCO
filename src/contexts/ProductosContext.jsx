@@ -9,7 +9,7 @@ export const ProductosProvider = ({ children }) => {
     const [productos, setProductos] = useState([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
-    const [busqueda, setBusqueda] = useState(""); // ✅ estado para la barra de búsqueda
+    const [busqueda, setBusqueda] = useState("");
 
     useEffect(() => {
         obtenerProductos();
@@ -71,7 +71,6 @@ export const ProductosProvider = ({ children }) => {
         }
     };
 
-    // ✅ Filtrado de productos según búsqueda
     const productosFiltrados = productos.filter(producto =>
         producto.name.toLowerCase().includes(busqueda.toLowerCase())
     );

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { FaTools, FaUser } from "react-icons/fa";
 import { ShoppingCart } from "lucide-react";
 import Logo from '../assets/logo_photoshop_LARGO.png'
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
 import { useAuthContext } from "../contexts/LoginContext";
 import { useProductos } from "../contexts/ProductosContext";

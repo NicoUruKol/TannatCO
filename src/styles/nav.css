@@ -44,7 +44,7 @@
 
 .my-nav-barra-superior {
     background-color: var(--color-separador);
-    position: relative;  /* clave para posicionar hijos absolutos */
+    position: relative;
     height: 2rem;
     width: 100%;
 }
@@ -127,8 +127,8 @@
 }
 
 .my-nav-busqueda-container {
-    position: absolute;   /* para posicionar dentro del nav */
-    left: 0;              /* pegado a la izquierda */
+    position: absolute;
+    left: 0; 
     top: 50%;
     transform: translateY(-50%);
     display: flex;
