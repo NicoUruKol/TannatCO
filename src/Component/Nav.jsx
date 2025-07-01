@@ -2,32 +2,44 @@ import { NavLink } from "react-router-dom";
 import { FaTools, FaUser } from "react-icons/fa";
 import { ShoppingCart } from "lucide-react";
 import Logo from '../assets/logo_photoshop_LARGO.png'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
 import { useAuthContext } from "../contexts/LoginContext";
+import { useProductos } from "../contexts/ProductosContext";
+
 import "../styles/nav.css";
 
 
 function Nav() {
     const { productosCarrito } = useContext(CarritoContext);
     const { currentUser, logout } = useAuthContext();
+    const { busqueda, setBusqueda } = useProductos();
 
     return (
         <>
-            <div className="nav-barra-superior">
+            <div className="my-nav-barra-superior">
+                <div className="my-nav-busqueda-container">
+                    <input
+                        type="text"
+                        placeholder="Buscar productos..."
+                        className="form-control nav-input-busqueda"
+                        value={busqueda}
+                        onChange={(e) => setBusqueda(e.target.value)}
+                    />
+                </div>
                 <ul>
                     {!currentUser ? (
                     <>
-                        <li><NavLink className="nav-superior-link" to="/login"><FaUser /> Iniciar Sesión</NavLink></li>
-                        <li><NavLink className="nav-superior-link" to="/registro">Crear Cuenta</NavLink></li>
+                        <li><NavLink className="my-nav-superior-link" to="/login"><FaUser /> Iniciar Sesión</NavLink></li>
+                        <li><NavLink className="my-nav-superior-link" to="/registro">Crear Cuenta</NavLink></li>
                         </>
                     ) : (
                         <>
-                            <li className="nav-superior-link">Hola, <span>{currentUser.email.split('@')[0]}</span></li>
-                            <li><button className="nav-superior-link-cierre" onClick={logout}>Cerrar Sesión</button></li>
+                            <li className="my-nav-superior-link">Hola, <span>{currentUser.email.split('@')[0]}</span></li>
+                            <li><button className="my-nav-superior-link-cierre" onClick={logout}>Cerrar Sesión</button></li>
                         </>
                     )}
-                    <li><NavLink className="nav-superior-link" to="/admin"><FaTools /> Admin</NavLink></li>
+                    <li><NavLink className="my-nav-superior-link" to="/admin"><FaTools /> Admin</NavLink></li>
                 </ul>
             </div>
 

@@ -9,11 +9,16 @@ import Uruguay4 from "./AboutUs/uruguay-4";
 import Uruguay5 from "./AboutUs/uruguay-5";
 import Uruguay6 from "./AboutUs/uruguay-6";
 import Footer from "./Footer";
+import { Helmet } from 'react-helmet';
 
 
 export default function AboutUs() {
     return(
         <main>
+            <Helmet>
+                <title>Nosotros | Tannat & Co</title>
+                <meta name="description" content="Quienes somos" />
+            </Helmet>
             <Header/>
             <Nosotros/>
             <Uruguay1/>

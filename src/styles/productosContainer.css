@@ -1,0 +1,26 @@
+.paginador {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.paginador button {
+    background-color: var(--color-fondo);
+    border: solid 1px var(--color-separador);
+    border-radius: 0.3rem;
+    color: var(--color-separador);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.paginador button:hover {
+    background-color: var(--color-header);
+    color: var(--color-separador);
+}
+
+.paginador .pagina-activa {
+    background-color: var(--color-header);
+    color: var(--color-separador);
+}

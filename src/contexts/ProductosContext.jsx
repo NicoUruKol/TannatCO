@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const ProductosContext = createContext();
-
 export const useProductos = () => useContext(ProductosContext);
 
 const API_URL = 'https://68100d9127f2fdac24101f8a.mockapi.io/productos';
@@ -10,6 +9,7 @@ export const ProductosProvider = ({ children }) => {
     const [productos, setProductos] = useState([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
+    const [busqueda, setBusqueda] = useState(""); // ✅ estado para la barra de búsqueda
 
     useEffect(() => {
         obtenerProductos();
@@ -45,31 +45,36 @@ export const ProductosProvider = ({ children }) => {
     };
 
     const editarProducto = async (id, datosActualizados) => {
-    const res = await fetch(`https://68100d9127f2fdac24101f8a.mockapi.io/productos/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(datosActualizados)
-    });
-    const actualizado = await res.json();
-    setProductos(prev => prev.map(p => p.id === id ? actualizado : p));
+        const res = await fetch(`${API_URL}/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(datosActualizados)
+        });
+        const actualizado = await res.json();
+        setProductos(prev => prev.map(p => p.id === id ? actualizado : p));
     };
 
     const eliminarProducto = async (id) => {
-    try {
-        const response = await fetch(`https://68100d9127f2fdac24101f8a.mockapi.io/productos/${id}`, {
-        method: "DELETE",
-        });
+        try {
+            const response = await fetch(`${API_URL}/${id}`, {
+                method: "DELETE",
+            });
 
-        if (!response.ok) {
-        throw new Error("No se pudo eliminar el producto");
+            if (!response.ok) {
+                throw new Error("No se pudo eliminar el producto");
+            }
+
+            setProductos((prev) => prev.filter((p) => p.id !== id));
+        } catch (error) {
+            console.error("Error eliminando producto:", error);
+            throw error; 
         }
+    };
 
-        setProductos((prev) => prev.filter((p) => p.id !== id));
-    } catch (error) {
-        console.error("Error eliminando producto:", error);
-        throw error; 
-    }
-};
+    // ✅ Filtrado de productos según búsqueda
+    const productosFiltrados = productos.filter(producto =>
+        producto.name.toLowerCase().includes(busqueda.toLowerCase())
+    );
 
     return (
         <ProductosContext.Provider value={{
@@ -77,7 +82,12 @@ export const ProductosProvider = ({ children }) => {
             obtenerProductos,
             agregarProducto,
             editarProducto,
-            eliminarProducto
+            eliminarProducto,
+            busqueda,
+            setBusqueda,
+            productosFiltrados,
+            cargando,
+            error
         }}>
             {children}
         </ProductosContext.Provider>
