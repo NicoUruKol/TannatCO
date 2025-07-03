@@ -26,25 +26,32 @@ const EditarProducto = () => {
         setForm({
             name: producto.name || "",
             price: producto.price || "",
-            description: producto.description || "",
+            price: producto.price != null ? String(producto.price) : "",
             avatar: producto.avatar || "",
         });
         }
     }, [producto]);
 
     const validar = (campo, valor) => {
+        const texto = (valor ?? "").toString().trim();
         let error = "";
 
-        if (!valor.trim()) {
-        error = "Este campo es obligatorio.";
-        } else if (campo === "price" && (!/^\d+$/.test(valor) || parseInt(valor) <= 0)) {
-        error = "El precio debe ser un número mayor a 0.";
-        } else if (campo === "avatar" && !/^https?:\/\/.*\.(jpg|jpeg|png|webp|gif)$/i.test(valor)) {
-        error = "Debe ser una URL válida de imagen.";
+        if (texto === "") {
+            error = "Este campo es obligatorio.";
+            } else if (
+            campo === "price" &&
+            (!/^\d+$/.test(texto) || Number(texto) <= 0)
+        ) {
+            error = "El precio debe ser un número mayor a 0.";
+            } else if (
+            campo === "avatar" &&
+            !/^https?:\/\/.*\.(jpg|jpeg|png|webp|gif)$/i.test(texto)
+        ) {
+            error = "Debe ser una URL válida de imagen.";
         }
 
-        setErrors((prev) => ({ ...prev, [campo]: error }));
-    };
+        setErrors(prev => ({ ...prev, [campo]: error }));
+};
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -59,13 +66,14 @@ const EditarProducto = () => {
 
         const hayErrores = Object.values(errors).some((error) => error) ||
         Object.values(form).some((v) => !v.trim());
+        Object.values(form).some((v) => (v ?? "").toString().trim() === "");
 
         if (hayErrores) {
         dispararSweetError("Revisá los campos antes de guardar.");
         return;
         }
 
-        await editarProducto(producto.id, form);
+        await editarProducto(producto.id, { ...form, price: Number(form.price) });
         dispararSweetConfirmar("Producto actualizado", "Los cambios se guardaron correctamente", "success");
         navigate("/admin/editarProducto");
     };
