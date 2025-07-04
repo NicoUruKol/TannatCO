@@ -12,7 +12,7 @@ export default function ProductosContainer() {
     const [paginaActual, setPaginaActual] = useState(1);
     const { admin, logoutAdmin } = useAdminContext();
     const navigate = useNavigate();
-    const { productosFiltrados } = useProductos(); // ✅ usamos productos filtrados desde el context
+    const { productosFiltrados } = useProductos();
 
     const indiceUltimoProducto = paginaActual * productosPorPagina;
     const indicePrimerProducto = indiceUltimoProducto - productosPorPagina;
