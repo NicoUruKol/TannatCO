@@ -9,7 +9,7 @@ export default function Footer(){
     return (
         <Container fluid className="px-0">
             <footer> 
-                <div className="footer-column">
+                <div className="footer-columna form">
                     <h4>NEWSLETTER</h4>
                     <form action="https://formspree.io/f/xzzbeojd" method="POST">
                         <input name="nombre" id="nombre" type="text" placeholder="Nombre y Apellido"/>
@@ -18,7 +18,7 @@ export default function Footer(){
                     </form>
                 </div>
             
-                <div className="footer-column">
+                <div className="footer-columna redes">
                     <h4>REDES SOCIALES</h4>
                     <div className="social-icons">
                         <a href="#"><img src={instagram} alt="Instagram" /></a>
@@ -27,7 +27,7 @@ export default function Footer(){
                     </div>
                 </div>
             
-                <div className="footer-column">
+                <div className="footer-columna contacto">
                     <h4>CONTACTANOS</h4>
                     <div className="contact-info">
                         <hr/>
@@ -39,7 +39,7 @@ export default function Footer(){
                     </div>
                 </div>
             
-                <section className="footer-section">
+                <section className="footer-columna footer-section">
                     <a href="#contacto-form" className="corte-info">Contacto</a>
                     <Link to="/aboutUs" className="corte-info">
                         Quienes Somos

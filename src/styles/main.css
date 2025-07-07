@@ -56,7 +56,7 @@ main h2 {
 
 .corte-carousel .carousel-control-prev-icon,
 .corte-carousel .carousel-control-next-icon {
-  background-image: none; /* eliminamos la flecha por defecto */
+    background-image: none; 
 }
 
 .carousel-control-next-icon, 
@@ -73,7 +73,6 @@ main h2 {
     text-decoration: none;
 }
 
-/* Añadir flechas personalizadas como contenido */
 .corte-carousel .carousel-control-prev::after {
     content: "‹";
     color: var(--color-separador);
@@ -89,7 +88,6 @@ main h2 {
     transform: translateX(-10%);
 }
 
-/* Indicadores (puntitos), si decides activarlos luego */
 .corte-carousel .carousel-indicators [data-bs-target] {
     background-color: var(--color-separador);
     opacity: 0.4;
@@ -103,7 +101,6 @@ main h2 {
     opacity: 1;
 }
 
-/* Mejora para evitar superposición de flechas sobre texto */
 .corte-carousel .carousel-inner {
     padding: 0 2rem;
 }
@@ -155,67 +152,51 @@ main h2 {
 /* FIN CSS BANNER*/
 /* INICIO CSS BODEGAMES*/
 
+.destacados h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    color: var(--color-header);
+    font-family: "Libre Caslon Text";
+}
+
+
 .destacados-lista-container {
-    width: auto;
-    max-width: 110rem;
-    height: auto;
     display: flex;
     flex-wrap: wrap;
-    margin: 2rem auto;
     justify-content: center;
-    border-radius: 0.8rem;
+    gap: 2rem;
+    max-width: 110rem;
+    margin: 0 auto 2rem;
 }
 
-.destacados-lista img{
+.destacados-lista .flyer-img {
     width: 15rem;
     height: 26rem;
+    object-fit: cover;
     border-radius: 0.8rem;
-    box-shadow: 0 2px 2px rgba(87,27,45, 0.2);
-    margin: 2rem;
+    box-shadow: 0 2px 2px rgba(87, 27, 45, 0.2);
+    transition: transform 0.25s;
+}
+
+.destacados-lista .flyer-img:hover {
+    transform: scale(1.05);
+}
+
+
+.destacados-carousel .carousel-item {
     text-align: center;
-    transition: all 0.25s;
 }
 
-.imagen-hover:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
+.destacados-carousel .flyer-img {
+    width: 70%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 0.8rem;
+    margin: 2rem auto;
+    box-shadow: 0 2px 2px rgba(87, 27, 45, 0.2);
 }
 
-.cerrar:hover {
-    color: #fff;
-}
-
-.modal {
-    display: flex;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-contenido {
-    cursor: default;
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-    
-.cerrar {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: var(--color-fondo);
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
 
 .boton-sin-estilo {
     background: none;
@@ -223,4 +204,98 @@ main h2 {
     padding: 0;
     margin: 0;
     cursor: pointer;
+}
+
+.flyer-wrapper {
+    width: 15rem;
+    height: 26rem;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 2px rgba(87, 27, 45, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flyer-wrapper .flyer-img {  
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s;
+}
+.flyer-wrapper .flyer-img:hover { transform: scale(1.05); }
+
+.destacados-carousel .carousel-control-prev-icon,
+.destacados-carousel .carousel-control-next-icon {
+    background-image: none;   
+}
+
+
+.destacados-carousel .carousel-control-prev-icon,
+.destacados-carousel .carousel-control-next-icon {
+    width: 0 !important;
+}
+
+
+.destacados-carousel .carousel-control-prev,
+.destacados-carousel .carousel-control-next {
+    color: var(--color-separador);
+    font-size: 2.4rem;
+    font-weight: bold;
+    opacity: 1;
+    width: 10%;                
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+.destacados-carousel .carousel-control-prev::after {
+    content: "‹";
+    color: var(--color-separador);
+    font-size: 2.8rem;
+}
+
+.destacados-carousel .carousel-control-next::after {
+    content: "›";
+    color: var(--color-separador);
+    font-size: 2.8rem;
+    transform: translateX(-10%);
+}
+
+
+.destacados-carousel .carousel-indicators [data-bs-target] {
+    background-color: var(--color-separador);
+    opacity: 0.4;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+.destacados-carousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+
+.destacados-carousel .carousel-inner {
+    padding: 0 2rem;
+}
+
+@media (max-width: 991.98px) {
+    .destacados-carousel .flyer-wrapper {
+    width: 70%;
+    max-width: 300px;
+    aspect-ratio: 3 / 5;     
+    height: auto;            
+    margin: 0 auto 2rem;
+    }
+}
+
+
+.destacados-carousel .carousel-control-prev-icon,
+.destacados-carousel .carousel-control-next-icon {
+    filter: invert(35%) drop-shadow(0 0 3px rgba(0,0,0,.7));
+}
+.destacados-carousel .carousel-control-prev,
+.destacados-carousel .carousel-control-next {
+    width: 8%;                 
 }
