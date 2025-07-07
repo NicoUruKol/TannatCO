@@ -54,6 +54,68 @@ main h2 {
     width: 2rem;
 }
 
+.corte-carousel .carousel-control-prev-icon,
+.corte-carousel .carousel-control-next-icon {
+  background-image: none; /* eliminamos la flecha por defecto */
+}
+
+.carousel-control-next-icon, 
+.carousel-control-prev-icon {
+    width: 0rem !important;
+}
+.corte-carousel .carousel-control-prev,
+.corte-carousel .carousel-control-next {
+    color: var(--color-separador);
+    font-size: 2rem;
+    opacity: 1;
+    width: 10%;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Añadir flechas personalizadas como contenido */
+.corte-carousel .carousel-control-prev::after {
+    content: "‹";
+    color: var(--color-separador);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.corte-carousel .carousel-control-next::after {
+    content: "›";
+    color: var(--color-separador);
+    font-size: 2.5rem;
+    font-weight: bold;
+    transform: translateX(-10%);
+}
+
+/* Indicadores (puntitos), si decides activarlos luego */
+.corte-carousel .carousel-indicators [data-bs-target] {
+    background-color: var(--color-separador);
+    opacity: 0.4;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+
+.corte-carousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+/* Mejora para evitar superposición de flechas sobre texto */
+.corte-carousel .carousel-inner {
+    padding: 0 2rem;
+}
+
+@media (max-width: 767.98px) {
+    .corte-perse-mobile {
+    width: 100%;       
+    max-width: 18rem;  
+    border: none;      
+    margin: 0 auto;    
+    }
+}
 /* FIN CSS CORTE*/
 /* INICIO CSS BANNER*/
 

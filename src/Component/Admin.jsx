@@ -1,12 +1,13 @@
 import { useAdminContext } from '../contexts/AdminContext';
 import { Link } from 'react-router-dom';
 import '../styles/admin.css';
+import { Container } from 'react-bootstrap';
 
 export default function Admin() {
     const {logoutAdmin} = useAdminContext();
     
     return (
-        <div>
+        <Container fluid className="px-0">
             <h2 className='admin-h2'>Panel de Administración</h2>
             <div className="admin-container">
                 
@@ -41,6 +42,6 @@ export default function Admin() {
                     Cerrar sesión Admin
                 </button>
             </div>
-        </div>
+        </Container>
     );
 }

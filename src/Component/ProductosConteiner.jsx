@@ -6,6 +6,7 @@ import { useProductos } from "../contexts/ProductosContext";
 import Footer from "./Footer";
 import { Helmet } from 'react-helmet';
 import "../styles/productosContainer.css";
+import { Container } from "react-bootstrap";
 
 export default function ProductosContainer() {
     const productosPorPagina = 8;
@@ -30,7 +31,7 @@ export default function ProductosContainer() {
     };
 
     return (
-        <div>
+        <Container fluid className="px-0">
             <Helmet>
                 <title>Productos | Tannat & Co</title>
                 <meta name="description" content="Explora nuestra variedad de productos." />
@@ -56,7 +57,6 @@ export default function ProductosContainer() {
                 )}
             </div>
 
-            {/* PAGINADOR */}
             {totalPaginas > 1 && (
                 <div className="paginador">
                     {Array.from({ length: totalPaginas }, (_, index) => (
@@ -70,8 +70,7 @@ export default function ProductosContainer() {
                     ))}
                 </div>
             )}
-
             <Footer />
-        </div>
+        </Container>
     );
 }

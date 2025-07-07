@@ -15,6 +15,7 @@
     border: 1px solid var(--color-separador);
     border-radius: 8px;
     width: 15rem;
+    padding: 0.5rem;
     text-align: center;
     color: var(--color-separador);
     display: flex;

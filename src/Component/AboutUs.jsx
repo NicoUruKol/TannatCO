@@ -10,11 +10,12 @@ import Uruguay5 from "./AboutUs/uruguay-5";
 import Uruguay6 from "./AboutUs/uruguay-6";
 import Footer from "./Footer";
 import { Helmet } from 'react-helmet';
+import { Container } from "react-bootstrap";
 
 
 export default function AboutUs() {
     return(
-        <main>
+        <Container fluid className="px-0">
             <Helmet>
                 <title>Nosotros | Tannat & Co</title>
                 <meta name="description" content="Quienes somos" />
@@ -29,7 +30,7 @@ export default function AboutUs() {
             <Uruguay6/>
             <Corte/>
             <Footer/>
-        </main>
+        </Container>
         
     );
 }

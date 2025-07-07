@@ -5,10 +5,11 @@ import Footer from "../Component/Footer";
 import "../styles/resenasYContacto.css"
 import Header from "./Header";
 import { Helmet } from 'react-helmet';
+import { Container } from "react-bootstrap";
 
 export default function ResenasYContacto(){
     return (
-        <div>
+        <Container fluid className="px-0">
             <Helmet>
                 <title>Contacto | Tannat & Co</title>
                 <meta name="description" content="Ponte en contacto con nosotros" />
@@ -21,6 +22,6 @@ export default function ResenasYContacto(){
                 <Corte/>
                 <Footer/>
             </div>
-        </div>
+        </Container>
     );
 };
