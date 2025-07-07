@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { CarritoContext } from "../contexts/CarritoContexts";
 import { useProductos } from "../contexts/ProductosContext";
 import "../styles/ProductoDetalle.css";
+import { Container } from "react-bootstrap";
 
 
 export default function ProductoDetalle({}){
@@ -37,7 +38,7 @@ export default function ProductoDetalle({}){
     if (!producto) return <p>Producto no encontrado.</p>;
 
     return (
-        <div>
+        <Container fluid className="px-3 py-2">
             <div className="detalle-container">
                 <img className="detalle-imagen" src={producto.avatar} alt={producto.name} />
                 <div className="detalle-info">
@@ -49,13 +50,16 @@ export default function ProductoDetalle({}){
                         <span style={{margin: "0 10px"}}>{cantidad}</span>
                         <button onClick={sumarContador} className="agregar-boton-signo">+</button>
                     </div>
-                    <button className="agregar-boton" onClick={funcionCarrito}>Agregar al carrito</button>
-                    <div>
+                    <button className="agregar-boton" onClick={funcionCarrito}>
+                        Agregar al carrito
+                    </button>
+
+                    <div className="detalle-btn-group">
                         <Link to="/productos">
-                            <button className="mover-boton-1">Volver a productos</button>
+                            <button className="mover-boton">Volver a productos</button>
                         </Link>
                         <Link to="/carrito">
-                            <button className="mover-boton-2">Ir al carrito</button>
+                            <button className="mover-boton">Ir al carrito</button>
                         </Link>
                     </div>
                 </div>
@@ -63,6 +67,6 @@ export default function ProductoDetalle({}){
             <div>
                 <Footer/>
             </div>
-        </div>
+        </Container>
     );
     }

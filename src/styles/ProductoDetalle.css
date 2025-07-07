@@ -1,37 +1,36 @@
 .detalle-container {
     display: flex;
-    gap: 30px;
-    padding: 20px;
-    background-color: var(--color-fondo);
+    gap: 2rem;
+    padding: 1.25rem;
+    background: var(--color-fondo);
     border: 1px solid var(--color-separador);
     border-radius: 10px;
-    margin: 20px auto;
+    margin: 2rem auto;
     max-width: 800px;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.detalle-container h2{
-    background-color: var(--color-fondo);
-    color: var(--color-separador);
-}
-
 .detalle-imagen {
     width: 300px;
     height: 300px;
-    border-radius: 10px;
     object-fit: cover;
-    border: solid 1px var(--color-separador);
+    border-radius: 10px;
+    border: 1px solid var(--color-separador);
 }
 
 .detalle-info {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.8rem;
     color: var(--color-separador);
 }
 
+.detalle-info h2 { 
+    color: var(--color-separador); 
+    background: none;
+}
 
 .detalle-info-peso {
     font-weight: bold;
@@ -41,82 +40,101 @@
 .detalle-contador {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: var(--color-separador);
-}
-
-.detalle-contador span {
-    font-size: 18px;
-    color: var(--color-separador);
+    gap: 0.6rem;
 }
 
 .agregar-boton-signo {
-    background-color: var(--color-fondo);
-    border: solid 1px var(--color-separador);
-    border-radius: 0.3rem;
+    background: var(--color-fondo);
     color: var(--color-separador);
+    border: 1px solid var(--color-separador);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .agregar-boton-signo:hover {
-    background-color: var(--color-header);
-    color: var(--color-separador);
+    background: var(--color-header);
 }
 
-.agregar-boton{
-    background-color: var(--color-fondo);
-    border: solid 1px var(--color-separador);
-    border-radius: 0.3rem;
+/* ========== BOTÓN “AGREGAR” (100%) ========== */
+.agregar-boton {
+    background: var(--color-fondo);
     color: var(--color-separador);
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin: auto 0;
+    border: 1px solid var(--color-separador);
+    border-radius: 4px;
     padding: 0.6rem 1.2rem;
-    align-self: normal;
-}
-
-.agregar-boton:hover {
-    background-color: var(--color-header);
-    color: var(--color-separador);
-}
-
-.mover-boton-1{
-    background-color: var(--color-fondo);
-    border: solid 1px var(--color-separador);
-    border-radius: 0.3rem;
-    color: var(--color-separador);
-    width: 14rem;
-    padding: 0.6rem;
-    margin-right: 1rem;
-
-
-    cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.mover-boton-1:hover {
-    background-color: var(--color-header);
-    color: var(--color-separador);
-}
-
-.mover-boton-2{
-    background-color: var(--color-fondo);
-    border: solid 1px var(--color-separador);
-    border-radius: 0.3rem;
-    color: var(--color-separador);
-    width: 14rem;
     cursor: pointer;
-    font-weight: bold;
-    padding: 0.6rem;
-
     transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 0.5rem;
 }
 
-.mover-boton-2:hover {
-    background-color: var(--color-header);
+.agregar-boton:hover { 
+    background: var(--color-header); 
+}
+
+/* ========== GRUPO de BOTONES INFERIORES ========== */
+.detalle-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    align-content: space-between;
+}
+
+.mover-boton {
+    flex: 1 1 0;
+    padding: 0.6rem;
+    font-weight: bold;
+    border: 1px solid var(--color-separador);
+    background: var(--color-fondo);
     color: var(--color-separador);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin: 0;             
+    width: 100%;           
+}
+
+.mover-boton:hover {
+    background-color: var(--color-header);
+}
+
+.detalle-btn-group > a {
+    flex: 1 1 0;
+    display: flex;
+    text-decoration: none;  
+}
+/* ========== RESPONSIVIDAD ========== */
+/* Tablets (≤767 px): apila imagen + info */
+@media (max-width: 767.98px) {
+    .detalle-container {
+        flex-direction: column;
+        max-width: 500px;
+        gap: 1.5rem;
+    }
+
+    .detalle-imagen { width: 70%; max-width: 280px; height: auto; }
+
+    .detalle-info   { align-items: center; text-align: center; }
+    .detalle-info h2 { font-size: 1.3rem; }
+    .detalle-info-peso { font-size: 1.3rem; }
+}
+
+/* Mobile (≤575 px): todo más compacto */
+@media (max-width: 575.98px) {
+    .detalle-container {
+    padding: 1rem;
+    margin: 1rem auto;
+    gap: 1rem;
+    }
+
+    .detalle-imagen { width: 90%; max-width: 240px; }
+
+    .detalle-info h2 { font-size: 1.1rem; }
+    .detalle-info p  { font-size: 0.9rem; }
 }
