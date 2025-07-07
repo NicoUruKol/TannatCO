@@ -202,27 +202,15 @@ export default function Nav() {
 
         {/* Links desktop */}
         <ul className="nav-links">
-            <li>
-                <NavLink className="nav-link" to="/" end>
-                Inicio
-                </NavLink>
-            </li>
-            <li>
-                <NavLink className="nav-link" to="/AboutUs">
-                Nosotros
-                </NavLink>
-            </li>
-            <li>
-                <NavLink className="nav-link" to="/Contacto">
-                Contacto
-                </NavLink>
-            </li>
-            </ul>
+            <li><NavLink className="nav-link" to="/" end>Inicio</NavLink></li>
+            <li><NavLink className="nav-link" to="/AboutUs">Nosotros</NavLink></li>
+            <li><NavLink className="nav-link" to="/Contacto">Contacto</NavLink></li>
 
-        {/* Link Productos siempre visible */}
-            <NavLink className="nav-link" to="/productos">
-            Productos
-            </NavLink>
+            {/* ——— SIEMPRE visible ——— */}
+            <li className="producto-link">
+                <NavLink className="nav-link" to="/productos">Productos</NavLink>
+            </li>
+        </ul>
 
             {/* Carrito */}
             <NavLink className="nav-linkCarrito-link" to="/carrito">
