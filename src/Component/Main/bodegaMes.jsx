@@ -13,7 +13,7 @@ export default function BodegaMes() {
     const [showModal, setShowModal]     = useState(false);
     const [srcModal, setSrcModal]       = useState("");
     const [isCarousel, setIsCarousel] = useState(
-        () => window.innerWidth < 992     // 992px = Bootstrap lg
+        () => window.innerWidth < 992    
     );
 
     useEffect(() => {

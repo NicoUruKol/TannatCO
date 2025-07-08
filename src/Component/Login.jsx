@@ -66,26 +66,26 @@ export default function Login() {
         <form className="login-container" onSubmit={handleSubmit}>
             <h2>Iniciar sesión</h2>
             <label>Usuario:</label>
-            <input 
-                type="email" 
-                value={email} 
-                placeholder="tucorreo@ejemplo.com"
-                onChange={e => setEmail(e.target.value)} 
-                required 
-            />
+            <div className="login-input-wrapper">
+                <input
+                    type="email"
+                    value={email}
+                    placeholder="tucorreo@ejemplo.com"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+            </div>
 
             <label>Contraseña:</label>
-            <div className='input-password-container'>
-                <input 
-                    type={mostrarPassword ? "text" : "password"} 
-                    value={password} 
-                    placeholder="Mínimo 6 caracteres" 
-                    onChange={e => setPassword(e.target.value)} 
-                    required 
+            <div className="login-input-wrapper has-eye">
+                <input
+                    type={mostrarPassword ? "text" : "password"}
+                    value={password}
+                    placeholder="Mínimo 6 caracteres"
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                 />
-                <span 
-                    className="icon-eye"
-                    onClick={() => setMostrarPassword(!mostrarPassword)}>
+                <span className="login-eye" onClick={() => setMostrarPassword(!mostrarPassword)}>
                     {mostrarPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
             </div>
