@@ -165,3 +165,114 @@
     border: solid 1px var(--color-separador);
     margin: 2px;
 }
+
+@media (max-width: 768px) {
+
+  .carrito-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: 0rem;
+  }
+
+  .carrito-container {
+    width: 100%;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .carrito-titulos {
+    display: none;
+  }
+
+  .carrito-producto {
+    display: grid;
+    grid-template-columns: 80px 1fr 30px;
+    grid-template-rows: auto auto auto;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-separador);
+    background-color: transparent;
+    align-items: center;
+  }
+
+  .carrito-imagen {
+    grid-row: 1 / 4;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: white;
+    border: solid 1px var(--color-separador);
+    margin-left: 0.5rem;
+  }
+
+  .carrito-nombre {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 0.9rem;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    background-color: white;
+  }
+
+  .carrito-producto button {
+    grid-column: 3;
+    grid-row: 1;
+    background-color: var(--color-separador);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .carrito-producto-info-bottom {
+    grid-column: 2 / 4;
+    grid-row: 3;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* RESUMEN */
+  .carrito-resumen {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    font-size: 0.85rem;
+    box-shadow: none;
+    border: none;
+  }
+
+  .carrito-resumen h3 {
+    grid-column: 1 / -1;
+    font-size: 1rem;
+  }
+
+  .botones-resumen-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .seguir-comprando,
+  .vaciar-carrito {
+    width: 48%;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .ir-a-pagar {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}

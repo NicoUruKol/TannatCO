@@ -8,7 +8,7 @@ import { useAdminContext } from "../contexts/AdminContext";
 import { useAuthContext } from "../contexts/LoginContext";
 
 
-export default function Carrito({setLogueadoUser}) {
+export default function Carrito() {
     const {productosCarrito, eliminarProducto, vaciarCarrito} = useContext(CarritoContext);
     const {currentUser} = useAuthContext();
     const navigate = useNavigate();
@@ -42,18 +42,20 @@ export default function Carrito({setLogueadoUser}) {
                     {productosCarrito.length > 0 ? productosCarrito.map((producto) => (
                         <div key={producto.id} className="carrito-producto">
                             <img className="carrito-imagen" src={producto.avatar} alt={producto.name} />
+
                             <h2 className="carrito-nombre">{producto.name}</h2>
-                            <span>x {producto.cantidad}</span>
-                            <div>
-                                <h3 className="carrito-precio">$ {formatearPrecio(producto.price)}</h3>
-                            </div>
-                            <div>
-                                <h3 className="carrito-precio">$ {formatearPrecio(producto.cantidad * producto.price)}</h3>
-                            </div>
+
                             <button 
                                 onClick={() => eliminarProducto(producto.id)} 
-                                style={{ color: "black", backgroundColor: "red", border: "solid 1px Black" }}
-                            >x</button>
+                            >
+                                x
+                            </button>
+
+                            <div className="carrito-producto-info-bottom">
+                                <span>x {producto.cantidad}</span>
+                                <span>$ {formatearPrecio(producto.price)}</span>
+                                <span>$ {formatearPrecio(producto.cantidad * producto.price)}</span>
+                            </div>
                         </div>
                     )) : <p>Tu carrito esta vacío</p>}
                 </div>
