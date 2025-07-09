@@ -64,7 +64,7 @@ export default function Contacto() {
                     <p>Facebook</p>
                 </div>
                 </div>
-
+                <h3>RESEÑAS Y COMENTARIOS</h3>
                 <Carousel
                 className="resenas-carousel"
                 interval={4500}
