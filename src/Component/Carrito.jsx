@@ -34,7 +34,7 @@ export default function Carrito() {
                         <span>Imagen</span>
                         <span>Descripción</span>
                         <span>Cantidad</span>
-                        <span>Unitario</span>
+                        <span className="precio-producto-valor">Unitario</span>
                         <span>Total</span>
                         <span>Eliminar</span>
                     </div>
@@ -44,7 +44,7 @@ export default function Carrito() {
                             <img className="carrito-imagen" src={producto.avatar} alt={producto.name} />
                             <h2 className="carrito-nombre">{producto.name}</h2>
                             <span>x {producto.cantidad}</span>
-                            <span>$ {formatearPrecio(producto.price)}</span>
+                            <span className="precio-producto-valor">$ {formatearPrecio(producto.price)}</span>
                             <span>$ {formatearPrecio(producto.cantidad * producto.price)}</span>
                             <button onClick={() => eliminarProducto(producto.id)}>x</button>
                         </div>
