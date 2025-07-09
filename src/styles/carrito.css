@@ -53,6 +53,10 @@
     background-color: var(--color-header-suave);
 }
 
+.carrito-producto button {
+  background-color: var(--color-separador);
+  color: white;
+}
 
 .carrito-imagen {
     width: 60px;
@@ -276,3 +280,19 @@
     padding: 0.6rem;
   }
 }
+
+@media (max-width: 900px) {
+  .carrito-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .carrito-resumen {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+
+

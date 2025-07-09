@@ -42,20 +42,11 @@ export default function Carrito() {
                     {productosCarrito.length > 0 ? productosCarrito.map((producto) => (
                         <div key={producto.id} className="carrito-producto">
                             <img className="carrito-imagen" src={producto.avatar} alt={producto.name} />
-
                             <h2 className="carrito-nombre">{producto.name}</h2>
-
-                            <button 
-                                onClick={() => eliminarProducto(producto.id)} 
-                            >
-                                x
-                            </button>
-
-                            <div className="carrito-producto-info-bottom">
-                                <span>x {producto.cantidad}</span>
-                                <span>$ {formatearPrecio(producto.price)}</span>
-                                <span>$ {formatearPrecio(producto.cantidad * producto.price)}</span>
-                            </div>
+                            <span>x {producto.cantidad}</span>
+                            <span>$ {formatearPrecio(producto.price)}</span>
+                            <span>$ {formatearPrecio(producto.cantidad * producto.price)}</span>
+                            <button onClick={() => eliminarProducto(producto.id)}>x</button>
                         </div>
                     )) : <p>Tu carrito esta vacío</p>}
                 </div>
