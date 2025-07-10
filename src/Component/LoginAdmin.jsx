@@ -1,11 +1,10 @@
+import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { useState } from "react"; 
-import { useAdminContext } from '../contexts/AdminContext'; 
+import { useAdminContext } from '../contexts/AdminContext';
 import { dispararSweetConfirmar } from '../assets/sweetAlert.js';
 import { dispararSweetError } from "../assets/sweetAlertError.js";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import '../styles/loginAdmin.css'
-import { Container } from "react-bootstrap";
+import '../styles/login.css';
 
 export default function LoginAdmin() {
     const { admin, loginAdmin } = useAdminContext();
@@ -21,7 +20,7 @@ export default function LoginAdmin() {
         if (usuario === 'admin' && password === '1234') {
             loginAdmin(usuario, password);
             dispararSweetConfirmar('Ingreso exitoso', `Bienvenido, ${usuario}!`, 'success');
-            setRedirect(true); 
+            setRedirect(true);
         } else {
             dispararSweetError('Usuario o contraseña incorrectos');
         }
@@ -32,36 +31,35 @@ export default function LoginAdmin() {
     }
 
     return (
-        <Container fluid className="px-0">
-            <div className="login-admin-container">
-                <h2>Login Admin</h2>
-                <label>Usuario:</label>
-                <div className="admin-input-wrapper">
-                    <input
-                        type="text"
-                        value={adminInput}
-                        placeholder="Usuario"
-                        onChange={(e) => setAdminInput(e.target.value.toLowerCase())}
-                        required
-                    />
-                </div>
+        <form className="login-container" onSubmit={(e) => e.preventDefault()}>
+            <h2>Login Admin</h2>
 
-                <label>Contraseña:</label>
-                <div className="admin-input-wrapper admin-input-wrapper--password">
-                    <input
-                        type={mostrarPassword ? "text" : "password"}
-                        value={passwordAdminInput}
-                        placeholder="Contraseña"
-                        onChange={(e) => setPasswordAdminInput(e.target.value)}
-                        required
-                    />
-                    <span className="admin-eye" onClick={() => setMostrarPassword(!mostrarPassword)}>
-                        {mostrarPassword ? <FaEyeSlash /> : <FaEye />}
-                    </span>
-                </div>
-
-                <button onClick={handleLoginAdmin}>Iniciar sesión Admin</button>
+            <label>Usuario:</label>
+            <div className="login-input-wrapper">
+                <input
+                    type="text"
+                    value={adminInput}
+                    placeholder="admin"
+                    onChange={(e) => setAdminInput(e.target.value.toLowerCase())}
+                    required
+                />
             </div>
-        </Container>
+
+            <label>Contraseña:</label>
+            <div className="login-input-wrapper has-eye">
+                <input
+                    type={mostrarPassword ? "text" : "password"}
+                    value={passwordAdminInput}
+                    placeholder="Contraseña"
+                    onChange={(e) => setPasswordAdminInput(e.target.value)}
+                    required
+                />
+                <span className="login-eye" onClick={() => setMostrarPassword(!mostrarPassword)}>
+                    {mostrarPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+            </div>
+
+            <button type="submit" onClick={handleLoginAdmin}>Iniciar sesión</button>
+        </form>
     );
 }

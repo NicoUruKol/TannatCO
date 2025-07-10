@@ -43,6 +43,7 @@ function App() {
           <Route path="/pagos" element={<RutaProtegidaPagos><Pagos /></RutaProtegidaPagos>} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/productos/:id" element={<ProductoDetalle />} />
+          <Route path="/detalle/:id" element={<ProductoDetalle />} />
           <Route path="/admin" element={admin ? <Admin /> : <Navigate to="/loginadmin" replace />} />
           <Route path="/loginadmin" element={<LoginAdmin />} />
           <Route path="/editarProducto" element={<Navigate to="/admin/editarProducto" replace />} />

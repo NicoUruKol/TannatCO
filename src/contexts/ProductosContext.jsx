@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const ProductosContext = createContext();
 export const useProductos = () => useContext(ProductosContext);
+export { ProductosContext }; 
 
 const API_URL = 'https://68100d9127f2fdac24101f8a.mockapi.io/productos';
 

@@ -8,21 +8,23 @@ export function CarritoProvider({ children }) {
         return carritoGuardado ? JSON.parse(carritoGuardado) : [];
     });
 
-    const agregarAlCarrito = (producto) => {
-        const existe = productosCarrito.find(p => p.id === producto.id);
+    const agregarAlCarrito = (entrada) => {
+    const nuevos = Array.isArray(entrada) ? entrada : [entrada];
+    const actualizados = [...productosCarrito];
+
+    nuevos.forEach((producto) => {
+        const existe = actualizados.find(p => p.id === producto.id);
         if (existe) {
-            const carritoActualizado = productosCarrito.map((p) => {
-                if (p.id === producto.id) {
-                    return { ...p, cantidad: p.cantidad + producto.cantidad };
-                } else {
-                    return p;
-                }
-            });
-            setProductosCarrito(carritoActualizado);
+            existe.cantidad += producto.cantidad;
         } else {
-            setProductosCarrito([...productosCarrito, producto]);
+            actualizados.push(producto);
         }
+    });
+
+    setProductosCarrito(actualizados);
     };
+
+
 
     const eliminarProducto = (id) => {
         const nuevoCarrito = productosCarrito.filter((p) => p.id !== id);
@@ -38,7 +40,12 @@ export function CarritoProvider({ children }) {
     }, [productosCarrito]);
 
     return (
-        <CarritoContext.Provider value={{ productosCarrito, agregarAlCarrito, vaciarCarrito, eliminarProducto }}>
+        <CarritoContext.Provider value={{
+            productosCarrito,
+            agregarAlCarrito,
+            vaciarCarrito,
+            eliminarProducto
+        }}>
             {children}
         </CarritoContext.Provider>
     );

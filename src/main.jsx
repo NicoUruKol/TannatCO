@@ -10,17 +10,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={import.meta.env.PROD ? "/TannatCO" : "/"}>
-      <AdminProvider>
-        <AuthProvider>
-          <CarritoProvider>
-            <ProductosProvider>
-              <App />
-            </ProductosProvider>
-          </CarritoProvider>
-        </AuthProvider>
+  <BrowserRouter basename={import.meta.env.PROD ? "/TannatCO" : "/"}>
+    <AuthProvider>        
+      <AdminProvider>     
+        <CarritoProvider>
+          <ProductosProvider>
+            <App />
+          </ProductosProvider>
+        </CarritoProvider>
       </AdminProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    </AuthProvider>
+  </BrowserRouter>
+</React.StrictMode>
 )
 

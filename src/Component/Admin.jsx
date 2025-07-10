@@ -8,7 +8,7 @@ export default function Admin() {
     
     return (
         <Container fluid className="px-0">
-            <h2 className='admin-h2'>Panel de Administración</h2>
+            <h2 className='admin-h2'>Panel de Admin</h2>
             <div className="admin-container">
                 
                 <p>

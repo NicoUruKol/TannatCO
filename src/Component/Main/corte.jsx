@@ -15,25 +15,25 @@ export default function Corte() {
         <Container fluid className="px-0">
             <section className="corte-info-card d-none d-md-flex">
                 <div className="corte-perse-1">
-                <img src={House} alt="envíos a todo el país" />
-                <p>
-                    <strong>hacemos envíos</strong>
-                </p>
-                <p>a todo el país</p>
+                    <img src={House} alt="envíos a todo el país" />
+                    <p>
+                        <strong>hacemos envíos</strong>
+                    </p>
+                    <p>a todo el país</p>
                 </div>
                 <div className="corte-perse">
-                <img src={Credit} alt="3 cuotas sin interés" />
-                <p>
-                    <strong>3 cuotas sin interés</strong>
-                </p>
-                <p>con todas tus tarjetas</p>
+                    <img src={Credit} alt="3 cuotas sin interés" />
+                    <p>
+                        <strong>3 cuotas sin interés</strong>
+                    </p>
+                    <p>con todas tus tarjetas</p>
                 </div>
                 <div className="corte-perse">
-                <img src={Truck} alt="envíos gratis en AMBA" />
-                <p>
-                    <strong>envíos gratis</strong>
-                </p>
-                <p>en AMBA desde $40.000</p>
+                    <img src={Truck} alt="envíos gratis en AMBA" />
+                    <p>
+                        <strong>envíos gratis</strong>
+                    </p>
+                    <p>en AMBA desde $40.000</p>
                 </div>
             </section>
 
