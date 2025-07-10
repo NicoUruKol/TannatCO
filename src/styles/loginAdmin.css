@@ -1,4 +1,6 @@
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box
+}
 
 .login-admin-container{
     display:flex;
@@ -28,16 +30,17 @@
     cursor:pointer;
     transition:background .3s
 }
+
 .login-admin-container button:hover{
     background:var(--color-header)
 }
-
 
 .admin-input-wrapper{
     position:relative;
     width:30%;
     max-width:30rem
 }
+
 .admin-input-wrapper input{
     width:100%;
     padding:.4rem .6rem;
@@ -46,10 +49,10 @@
     font-size:.9rem;
     color:var(--color-separador)
 }
+
 .admin-input-wrapper--password input{
     padding-right:3rem
 }
-
 
 .admin-eye{
     position:absolute;
@@ -60,6 +63,8 @@
     color:var(--color-separador);
     cursor:pointer
 }
+
+/*MEDIA QUERIES*/
 
 @media(max-width:991.98px){
     .admin-input-wrapper{

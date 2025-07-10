@@ -11,8 +11,6 @@ import EditarProducto from './Component/EditarProducto';
 import EliminarProducto from './Component/EliminarProducto';
 import RutaProtegidaPagos from "./Component/RutaProtegidaPagos";
 
-
-
 const ProductosContainer = lazy(() => import('./Component/ProductosConteiner'));
 const Carrito = lazy(() => import('./Component/Carrito'));
 const Pagos = lazy(() => import('./Component/Pagos'));
@@ -25,7 +23,6 @@ const LoginAdmin = lazy(() => import('./Component/LoginAdmin'));
 const RegistroUser = lazy(() => import('./Component/Registro'));
 
 function App() {
-  const { currentUser } = useAuthContext();
   const { admin } = useAdminContext();
 
   return (

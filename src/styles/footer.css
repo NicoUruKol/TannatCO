@@ -1,7 +1,7 @@
 footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 10rem auto auto; /* ← primera fila más chica */
+    grid-template-rows: 10rem auto auto;
     gap: 0.5rem;
     background-color: var(--color-foot);
     color: var(--color-separador);
@@ -190,6 +190,8 @@ footer {
     align-items: center;
     gap: 2rem;                 
 }
+
+/*MEDIA QUERIES*/
 
 @media (max-width: 575.98px) {
     .footer-section {

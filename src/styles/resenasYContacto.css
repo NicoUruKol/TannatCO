@@ -47,6 +47,7 @@
     font-weight: bold; 
     margin-bottom: .3rem; 
 }
+
 .form-group input,
 .form-group textarea { 
     width: 100%; 
@@ -132,7 +133,8 @@
     text-transform: capitalize; 
 }
 
-.resenas-carousel .carousel-item { 
+.resenas-carousel 
+.carousel-item { 
     display: none; 
 } 
 
@@ -148,6 +150,8 @@
     justify-content: center; 
     gap: 2rem; 
 }
+
+/*MEDIA QUERIES*/
 
 @media (max-width: 991.98px) {
     .slide-wrapper article:last-child { 

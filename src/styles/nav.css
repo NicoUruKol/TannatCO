@@ -54,7 +54,7 @@ a {
     margin: 0;
     padding: 0;
     z-index: 9999;
-    }
+}
 
 .busqueda-item {
     display: grid;
@@ -69,10 +69,12 @@ a {
 .busqueda-item:last-child { 
     border-bottom: none; 
 }
+
 .busqueda-item:hover {
     background: var(--color-resenaPerse); 
     color: var(--color-header); 
 }
+
 .busqueda-thumb { 
     width: 3rem; 
     height: 3rem; 
@@ -115,7 +117,6 @@ a {
     padding: 0 1rem;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
-
 
 .logo-img {
     height: 5rem;             
@@ -210,9 +211,10 @@ a {
     font-size: 0.9rem;
 }
 
-    /* ========= MEDIA QUERY ========= */
+/*MEDIA QUERIES*/
+
 @media (max-width: 497.98px) {
-    .logo-img         { 
+    .logo-img{ 
         max-width: 8rem; 
     }
     .my-nav-busqueda-container { 

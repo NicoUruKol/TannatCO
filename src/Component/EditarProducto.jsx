@@ -25,8 +25,8 @@ const EditarProducto = () => {
         if (producto) {
         setForm({
             name: producto.name || "",
-            price: producto.price || "",
             price: producto.price != null ? String(producto.price) : "",
+            description: producto.description || "",
             avatar: producto.avatar || "",
         });
         }

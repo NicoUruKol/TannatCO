@@ -1,5 +1,3 @@
-/* ============ ESTILOS GENERALES ============ */
-
 .nosotros-perse p,
 .parrafos-nosotros {
     width: 70%;
@@ -136,7 +134,7 @@
     display: block;
 }
 
-/* ============ MEDIA QUERIES: RESPONSIVE ============ */
+/*MEDIA QUERIES*/
 
 @media (max-width: 991.98px) {
     .nosotros-perse p,
@@ -199,7 +197,6 @@
     }
 }
 
-/* ============ COLORES DE TITULARES ============ */
 .nosotros-perse h2,
 .nosotros-1 h2,
 .nosotros-2 h2,

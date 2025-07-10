@@ -63,6 +63,7 @@
 .crear-usuario-container button:hover { background: var(--color-header); }
 
 /* MEDIA‑QUERIES*/
+
 @media (min-width: 576px) and 
     (max-width: 991.98px) {
         .login-input-wrapper { 

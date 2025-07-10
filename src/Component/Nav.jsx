@@ -94,7 +94,6 @@ export default function Nav() {
                             <FaUser /> Iniciar Sesión
                             </NavLink>
                         </li>
-                        {/* Crear cuenta sólo visible ≥768 */}
                         <li className="crear-cuenta-link">
                             <NavLink className="my-nav-superior-link-2" to="/registro">
                             Crear Cuenta

@@ -58,7 +58,6 @@
     background: var(--color-header);
 }
 
-/* ========== BOTÓN “AGREGAR” (100%) ========== */
 .agregar-boton {
     background: var(--color-fondo);
     color: var(--color-separador);
@@ -76,7 +75,6 @@
     background: var(--color-header); 
 }
 
-/* ========== GRUPO de BOTONES INFERIORES ========== */
 .detalle-btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -109,8 +107,9 @@
     display: flex;
     text-decoration: none;  
 }
-/* ========== RESPONSIVIDAD ========== */
-/* Tablets (≤767 px): apila imagen + info */
+
+/*MEDIA QUERIES*/
+
 @media (max-width: 767.98px) {
     .detalle-container {
         flex-direction: column;
@@ -118,14 +117,24 @@
         gap: 1.5rem;
     }
 
-    .detalle-imagen { width: 70%; max-width: 280px; height: auto; }
+    .detalle-imagen { 
+        width: 70%; 
+        max-width: 280px; 
+        height: auto; 
+    }
 
-    .detalle-info   { align-items: center; text-align: center; }
-    .detalle-info h2 { font-size: 1.3rem; }
-    .detalle-info-peso { font-size: 1.3rem; }
+    .detalle-info   { 
+        align-items: center; 
+        text-align: center; 
+    }
+    .detalle-info h2 { 
+        font-size: 1.3rem; 
+    }
+    .detalle-info-peso { 
+        font-size: 1.3rem; 
+    }
 }
 
-/* Mobile (≤575 px): todo más compacto */
 @media (max-width: 575.98px) {
     .detalle-container {
     padding: 1rem;
@@ -133,8 +142,15 @@
     gap: 1rem;
     }
 
-    .detalle-imagen { width: 90%; max-width: 240px; }
+    .detalle-imagen { 
+        width: 90%; 
+        max-width: 240px; 
+    }
 
-    .detalle-info h2 { font-size: 1.1rem; }
-    .detalle-info p  { font-size: 0.9rem; }
+    .detalle-info h2 { 
+        font-size: 1.1rem; 
+    }
+    .detalle-info p  { 
+        font-size: 0.9rem; 
+    }
 }

@@ -43,7 +43,6 @@
     border-radius: 0.5rem;
     color: var(--color-separador);
     font-weight: 500;
-
 }
 
 .admin-container button {
@@ -68,6 +67,5 @@
     text-decoration: none;
     color: inherit;
     text-transform: none;
-
 }
 

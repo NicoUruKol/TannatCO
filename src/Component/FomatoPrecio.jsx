@@ -1,7 +1,7 @@
 
-export const formatearPrecio = (precio) => {
-    return Number(precio).toLocaleString('es-ES', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
+export function formatearPrecio(precio, conDecimales = true) {
+    return precio.toLocaleString("es-AR", {
+    minimumFractionDigits: conDecimales ? 2 : 0,
+    maximumFractionDigits: conDecimales ? 2 : 0,
     });
-};
+}

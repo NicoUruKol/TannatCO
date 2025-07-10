@@ -33,7 +33,7 @@ export default function Carrito() {
                     <div className="carrito-titulos">
                         <span>Imagen</span>
                         <span>Descripción</span>
-                        <span>Cantidad</span>
+                        <span className="precio-producto-valor">Cantidad</span>
                         <span className="precio-producto-valor">Unitario</span>
                         <span>Total</span>
                         <span>Eliminar</span>
@@ -44,8 +44,22 @@ export default function Carrito() {
                             <img className="carrito-imagen" src={producto.avatar} alt={producto.name} />
                             <h2 className="carrito-nombre">{producto.name}</h2>
                             <span>x {producto.cantidad}</span>
-                            <span className="precio-producto-valor">$ {formatearPrecio(producto.price)}</span>
-                            <span>$ {formatearPrecio(producto.cantidad * producto.price)}</span>
+                            <span className="precio-producto-valor">
+                                <span className="precio-desktop">
+                                $ {formatearPrecio(producto.price, true)}
+                                </span>
+                                <span className="precio-mobile">
+                                    $ {formatearPrecio(producto.price, false)}
+                                </span>
+                            </span>
+                            <span>
+                                <span className="precio-desktop">
+                                    $ {formatearPrecio(producto.price * producto.cantidad, true)}
+                                </span>
+                                <span className="precio-mobile">
+                                    $ {formatearPrecio(producto.price * producto.cantidad, false)}
+                                </span>
+                            </span>
                             <button onClick={() => eliminarProducto(producto.id)}>x</button>
                         </div>
                     )) : <p>Tu carrito esta vacío</p>}
