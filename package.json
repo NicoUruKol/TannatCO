@@ -5,14 +5,14 @@
   "type": "module",
   "homepage": " https://nicourukol.github.io/TannatCO/",
   "scripts": {
-    "deploy": "npm run build && gh-pages -d dist",
-    "dev": "vite",
-    "build": "vite build",             
-    "build:github": "vite build --mode github",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build"
-  },
+  "dev": "vite",
+  "build": "vite build",                     
+  "build:github": "vite build --mode github",
+  "predeploy": "npm run build:github",       
+  "deploy": "gh-pages -d dist",              
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
   "dependencies": {
     "bootstrap": "^5.3.7",
     "firebase": "^11.8.1",
